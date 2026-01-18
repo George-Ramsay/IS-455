@@ -1,0 +1,501 @@
+user_id,signup_date,last_active,age,gender,country,plan_type,device,avg_watch_minutes,num_sessions,cancelled,rejoined,survey_submitted,satisfaction_score,primary_genre,secondary_genre
+U1000,2/1/24,10/28/24,60,,India,Free,TV,121.2,82,No,No,,,Thriller,Action
+U1001,5/23/24,8/5/24,,Male,Mexico,Free,Tablet,11.5,1,Yes,No,,,Action,Animation
+U1002,5/11/21,6/19/23,41,Female,Canada,Free,Mobile,60.6,22,Yes,Yes,6/19/23 12:32,2.8,Action,Animation
+U1003,5/26/22,4/6/24,,Female,Japan,Free,Mobile,62.7,26,Yes,Yes,4/6/24 19:54,2.4,Comedy,Animation
+U1004,4/12/23,8/28/24,20,Female,United Kingdom,Basic,TV,137.3,74,No,No,,,Comedy,Documentary
+U1005,1/23/22,9/15/23,77,Male,South Korea,Free,Mobile,11.3,15,Yes,Yes,9/15/23 9:19,2.1,Documentary,
+U1006,5/24/22,7/7/24,64,Female,Australia,Basic,Tablet,91,17,No,No,,,Drama,Fantasy
+U1007,10/23/23,11/15/24,71,Female,Sweden,Basic,Laptop,74.9,39,No,No,,,Thriller,Comedy
+U1008,3/27/23,12/22/23,25,Female,Japan,Free,Tablet,156.6,55,Yes,No,12/22/23 12:15,3.1,Thriller,Thriller
+U1009,12/4/21,4/30/24,70,Female,Italy,Basic,Mobile,141.3,54,No,No,4/30/24 20:40,4.1,Action,Horror
+U1010,2/23/22,12/8/22,76,Male,Netherlands,Basic,TV,184.9,41,Yes,No,,,Thriller,Animation
+U1011,5/15/21,12/1/21,0,Female,Australia,Free,Mobile,69,13,Yes,No,12/1/21 14:23,2.7,Thriller,Thriller
+U1012,4/9/21,2/21/23,57,Female,Mexico,Premium,Tablet,162.2,26,Yes,No,,,Sci-Fi,Romance
+U1013,10/5/22,11/11/24,22,Male,Australia,Free,Laptop,221.9,111,Yes,No,11/11/24 16:14,3.2,Action,
+U1014,5/14/23,1/9/24,69,Male,Netherlands,Free,TV,39,2,Yes,No,,,Fantasy,Animation
+U1015,8/19/21,9/6/23,32,Male,South Korea,Basic,Tablet,137.9,28,Yes,No,9/6/23 9:41,3,Comedy,
+U1016,10/10/23,2/20/24,45,Male,Australia,Free,Tablet,57.6,26,Yes,Yes,,,Comedy,Fantasy
+U1017,6/8/24,12/14/24,,Male,Canada,Premium,TV,97.2,40,No,No,12/14/24 11:12,3.4,Sci-Fi,Drama
+U1018,10/11/22,8/24/23,54,Female,Sweden,Basic,Tablet,69.1,9,Yes,No,,,Thriller,Sci-Fi
+U1019,6/10/24,12/6/24,66,Male,Spain,Free,Mobile,44.8,5,No,No,12/6/24 14:01,2.8,Thriller,Comedy
+U1020,2/11/24,5/21/24,66,Unknown,Canada,Basic,TV,97.9,43,No,No,,,Fantasy,Comedy
+U1021,6/2/24,10/8/24,36,Female,Sweden,Free,Laptop,110.7,86,No,No,10/8/24 13:31,4.1,Documentary,Comedy
+U1022,5/3/21,6/7/22,0,Male,Canada,Basic,Laptop,170.2,61,Yes,Yes,6/7/22 13:21,2.6,Sci-Fi,Fantasy
+U1023,1/22/23,6/14/23,50,Male,South Korea,Premium,Laptop,120.5,19,No,No,6/14/23 10:19,3.1,Drama,Fantasy
+U1024,5/14/23,9/13/24,50,Male,Spain,Free,Laptop,91.7,62,No,No,9/13/24 18:27,3.4,Action,Horror
+U1025,4/18/22,11/18/24,0,Male,South Korea,Premium,TV,203.2,73,No,No,11/18/24 16:51,4.2,Romance,Romance
+U1026,3/29/24,4/6/24,58,Male,Mexico,Free,Laptop,123.4,52,No,No,4/6/24 15:53,3.6,Drama,
+U1027,9/20/22,4/28/24,66,Male,Sweden,Basic,TV,126.3,36,No,No,,,Thriller,Drama
+U1028,5/28/23,4/29/24,19,Male,Italy,Premium,Tablet,233.9,107,Yes,No,4/29/24 8:03,3.1,Romance,Sci-Fi
+U1029,3/4/24,9/14/24,34,Male,France,Premium,Tablet,115.9,62,No,No,,,Animation,Sci-Fi
+U1030,4/15/22,4/24/23,39,Female,Germany,Free,Mobile,420,113,No,No,4/24/23 13:07,4.5,Thriller,Fantasy
+U1031,1/27/21,9/9/21,38,,Sweden,Premium,TV,420,115,Yes,No,9/9/21 12:59,3.8,Fantasy,Horror
+U1032,5/28/24,11/1/24,46,Male,France,Premium,TV,164.9,83,No,No,,,Action,Documentary
+U1033,11/27/23,9/1/24,46,Unknown,South Korea,Premium,Laptop,167.5,65,No,No,9/1/24 12:31,4.5,Documentary,Romance
+U1034,3/30/24,12/10/24,20,Male,Australia,Basic,Tablet,119.6,34,No,No,,,Fantasy,Action
+U1035,7/24/22,6/11/23,57,Female,Brazil,Basic,TV,38.3,25,Yes,No,,,Drama,Romance
+U1036,5/5/22,5/25/23,,Male,South Korea,Free,TV,156.7,37,Yes,Yes,,,Fantasy,Fantasy
+U1037,9/3/21,12/15/24,56,Male,Spain,Basic,Tablet,186.8,80,No,No,12/15/24 16:23,3.2,Action,Drama
+U1038,5/27/22,6/30/23,31,Female,United States,Basic,Mobile,144.5,26,Yes,No,,,Thriller,Animation
+U1039,4/14/23,6/3/23,42,Female,Netherlands,Premium,Tablet,30.1,3,Yes,No,6/3/23 17:05,3.6,Documentary,Horror
+U1040,12/14/23,3/23/24,50,Male,India,Basic,Laptop,67.1,34,Yes,Yes,,,Comedy,Sci-Fi
+U1041,2/1/24,8/14/24,23,Unknown,France,Free,Tablet,90.2,27,No,No,8/14/24 14:39,2.6,Romance,Action
+U1042,12/18/23,11/27/24,54,Female,Brazil,Free,Laptop,11.9,3,No,No,11/27/24 19:52,2.7,Romance,Sci-Fi
+U1043,12/18/23,4/17/24,18,Female,United States,Basic,Tablet,24.7,4,No,No,,,Drama,Animation
+U1044,5/3/22,12/25/22,70,Male,South Korea,Basic,Tablet,124.4,58,Yes,Yes,12/25/22 12:21,2.4,Animation,Romance
+U1045,9/24/23,12/18/23,74,Female,India,Premium,Tablet,81,33,Yes,No,,,Horror,Horror
+U1046,12/23/21,1/14/22,75,,United States,Premium,TV,177.9,43,Yes,No,1/14/22 22:09,3.7,Animation,Sci-Fi
+U1047,3/18/22,11/15/23,18,Female,United Kingdom,Basic,Mobile,327.3,100,No,No,11/15/23 14:01,4.5,Documentary,Documentary
+U1048,5/2/23,5/15/24,50,Female,France,Premium,TV,217.6,93,Yes,No,,,Comedy,Drama
+U1049,4/6/24,5/18/24,61,Male,Germany,Basic,Laptop,108.1,33,Yes,No,5/18/24 20:50,2.5,Romance,Romance
+U1050,2/4/21,1/31/23,34,Female,Spain,Free,TV,32.3,25,Yes,No,1/31/23 21:33,2.4,Thriller,Documentary
+U1051,1/4/24,8/7/24,38,Male,India,Premium,TV,89.9,1,No,No,,,Romance,Horror
+U1052,7/9/23,1/16/24,52,Female,Germany,Free,Laptop,15.6,1,Yes,No,1/16/24 15:22,2.6,Sci-Fi,Documentary
+U1053,10/6/21,5/10/22,52,Female,Brazil,Basic,Mobile,209.3,57,Yes,No,5/10/22 16:21,4,Fantasy,Horror
+U1054,11/30/22,12/18/22,66,Female,Germany,Basic,Laptop,74.8,31,Yes,Yes,,,Horror,Drama
+U1055,1/5/23,1/23/24,69,Female,Spain,Basic,Laptop,323.8,119,No,No,,,Documentary,Action
+U1056,1/28/24,2/21/24,69,Unknown,United States,Premium,Laptop,249.1,95,No,No,2/21/24 16:38,4.5,Animation,Animation
+U1057,10/20/22,11/8/24,29,Female,United Kingdom,Premium,Laptop,330.1,157,No,No,11/8/24 13:06,4.6,Comedy,Comedy
+U1058,4/6/24,9/22/24,26,Unknown,United Kingdom,Premium,Laptop,173.3,93,No,No,9/22/24 12:37,4.7,Thriller,Sci-Fi
+U1059,5/15/22,3/1/24,80,Female,India,Premium,Tablet,139.8,24,No,No,,,Fantasy,Fantasy
+U1060,6/29/24,12/4/24,36,Female,South Korea,Free,TV,175,45,No,No,12/4/24 17:18,4.5,Action,Thriller
+U1061,2/24/24,8/14/24,30,Female,Spain,Premium,Mobile,291.9,92,No,No,,,Fantasy,Romance
+U1062,4/1/22,7/7/24,,Male,Sweden,Free,TV,127.7,64,Yes,Yes,7/7/24 19:56,3.4,Fantasy,Animation
+U1063,7/23/23,11/16/23,23,Female,Mexico,Basic,Tablet,75.4,22,Yes,Yes,11/16/23 22:20,3.3,Horror,Horror
+U1064,6/5/23,1/3/24,28,Male,Italy,Basic,Laptop,90.5,32,Yes,No,1/3/24 16:17,4,Thriller,Drama
+U1065,10/18/22,1/31/24,74,Female,Canada,Basic,Tablet,192.9,52,Yes,No,,,Horror,Animation
+U1066,1/8/22,11/4/24,75,Female,Canada,Free,Laptop,73.1,1,No,No,,,Thriller,Thriller
+U1067,4/16/24,5/13/24,45,Male,Australia,Basic,Tablet,68,21,No,No,,,Sci-Fi,Sci-Fi
+U1068,8/17/23,1/8/24,26,Female,Canada,Free,TV,18.4,13,Yes,Yes,1/8/24 20:12,3.2,Romance,Comedy
+U1069,6/30/24,11/10/24,35,Unknown,Netherlands,Free,Laptop,245.2,83,No,No,11/10/24 17:55,3.8,Animation,Fantasy
+U1070,12/25/23,5/18/24,49,Male,Netherlands,Free,Tablet,70.5,48,Yes,No,5/18/24 16:21,2.5,Action,Thriller
+U1071,3/6/23,6/8/24,50,Female,Germany,Free,Tablet,5.7,1,Yes,Yes,6/8/24 14:05,2.7,Sci-Fi,Animation
+U1072,9/24/23,11/15/23,0,Female,France,Premium,TV,122.2,30,Yes,Yes,,,Fantasy,Fantasy
+U1073,1/7/24,1/7/24,68,Unknown,Sweden,Basic,TV,156.9,54,Yes,No,1/7/24 15:31,3.2,Animation,Romance
+U1074,4/5/21,4/4/24,56,Female,Germany,Basic,Tablet,122,73,No,No,4/4/24 18:49,3.4,Comedy,Horror
+U1075,7/8/23,1/30/24,54,Female,Canada,Basic,Mobile,420,126,No,No,,,Action,
+U1076,2/3/23,12/5/23,51,Female,France,Free,Tablet,138.8,31,Yes,No,12/5/23 9:51,3.1,Comedy,Documentary
+U1077,6/15/21,2/23/24,32,Male,Brazil,Basic,Tablet,280.1,77,Yes,Yes,,,Documentary,Thriller
+U1078,5/13/21,7/18/23,21,Female,South Korea,Premium,Laptop,256.8,68,Yes,Yes,,,Animation,Horror
+U1079,9/11/23,11/18/23,51,Female,United States,Premium,Tablet,29.3,22,Yes,No,,,Action,Horror
+U1080,2/12/21,6/2/21,74,Female,Australia,Basic,Laptop,398.4,96,Yes,No,,,Drama,Action
+U1081,6/19/23,6/12/24,21,Female,Spain,Free,Laptop,144.2,52,No,No,,,Sci-Fi,Romance
+U1082,4/3/21,2/3/23,67,Male,India,Premium,Tablet,35,14,Yes,Yes,,,Comedy,Comedy
+U1083,8/27/22,7/8/24,78,Female,Netherlands,Premium,Laptop,122.5,42,Yes,No,7/8/24 19:25,3.5,Comedy,Horror
+U1084,1/2/24,10/9/24,74,Female,Canada,Basic,Tablet,8.9,6,Yes,No,10/9/24 18:47,4,Fantasy,Fantasy
+U1085,11/16/23,9/2/24,18,Female,South Korea,Basic,TV,116.9,37,Yes,Yes,,,Comedy,Sci-Fi
+U1086,10/30/21,7/30/23,73,Female,Japan,Basic,TV,404.4,106,No,No,,,Animation,Documentary
+U1087,5/24/24,9/30/24,0,Female,Brazil,Premium,Laptop,208,76,No,No,,,Thriller,Action
+U1088,1/20/23,1/17/24,64,Male,Netherlands,Premium,Mobile,43.1,1,No,No,,,Fantasy,Fantasy
+U1089,4/30/22,5/27/22,27,Male,Canada,Premium,TV,253.6,71,Yes,No,5/27/22 21:43,4,Drama,Horror
+U1090,3/8/21,10/26/21,62,Male,Mexico,Free,TV,159.3,60,Yes,No,10/26/21 22:07,3.4,Horror,Romance
+U1091,1/18/23,9/3/24,0,Male,Spain,Basic,Mobile,25.5,1,No,No,9/3/24 9:58,2.3,Horror,Horror
+U1092,10/24/22,7/27/23,23,Male,Spain,Basic,Laptop,101.1,40,Yes,No,7/27/23 21:29,3.2,Animation,Comedy
+U1093,4/3/23,8/17/23,72,Male,Sweden,Free,TV,98.9,36,Yes,Yes,,,Thriller,Fantasy
+U1094,10/8/22,2/2/23,66,Female,Canada,Basic,Mobile,305.3,82,Yes,No,,,Sci-Fi,Animation
+U1095,7/13/21,11/6/23,28,Female,Spain,Free,Tablet,18.2,11,Yes,Yes,,,Animation,
+U1096,11/22/21,3/6/24,36,Unknown,Canada,Basic,Laptop,158.7,44,No,No,,,Fantasy,Comedy
+U1097,1/1/21,3/31/21,31,Female,Netherlands,Premium,Mobile,182.3,31,Yes,No,3/31/21 11:12,2.7,Fantasy,Animation
+U1098,1/10/21,9/27/21,40,Unknown,Netherlands,Basic,Mobile,227.1,68,Yes,No,,,Thriller,Fantasy
+U1099,11/17/21,10/11/22,0,Female,United States,Free,Laptop,37.3,2,Yes,No,10/11/22 14:34,4.1,Drama,Sci-Fi
+U1100,1/24/24,11/23/24,22,Male,Spain,Basic,Tablet,133.2,52,No,No,11/23/24 19:34,3.8,Horror,Comedy
+U1101,5/23/23,1/6/24,31,Male,South Korea,Free,Tablet,111.8,29,Yes,No,1/6/24 10:58,3.2,Documentary,Romance
+U1102,7/28/22,12/6/22,42,Female,Mexico,Basic,Mobile,83.7,33,Yes,No,12/6/22 14:39,3.3,Sci-Fi,Drama
+U1103,11/13/23,1/14/24,32,Male,United States,Basic,Tablet,175.9,41,Yes,No,,,Thriller,Horror
+U1104,4/1/23,12/6/24,,Male,France,Free,Mobile,19.5,1,No,No,,,Fantasy,Documentary
+U1105,8/2/22,8/27/23,,,Germany,Free,Tablet,214.5,48,Yes,No,8/27/23 22:28,3.6,Comedy,Fantasy
+U1106,4/23/22,12/9/22,,Female,Australia,Free,TV,151.6,52,Yes,No,,,Sci-Fi,Drama
+U1107,10/16/21,4/29/22,39,Male,United Kingdom,Basic,Mobile,98.8,46,Yes,No,,,Fantasy,Horror
+U1108,2/16/24,12/5/24,30,Male,Brazil,Free,Tablet,71.1,15,No,No,,,Fantasy,
+U1109,3/26/24,5/11/24,21,Female,United States,Free,Laptop,164.4,77,Yes,No,,,Fantasy,Thriller
+U1110,1/25/23,11/12/23,43,Male,Brazil,Premium,TV,63,3,Yes,No,11/12/23 17:39,3.1,Action,Romance
+U1111,12/12/21,10/9/22,60,Unknown,South Korea,Free,TV,23.5,8,Yes,No,,,Fantasy,Documentary
+U1112,9/12/23,12/31/23,57,Male,Italy,Basic,Laptop,111.1,44,Yes,Yes,,,Documentary,Drama
+U1113,6/7/23,10/11/23,59,Male,Sweden,Free,Tablet,54.2,29,Yes,No,10/11/23 10:28,2.3,Thriller,Drama
+U1114,2/24/22,11/2/24,74,Male,South Korea,Basic,Laptop,93.5,24,Yes,Yes,,,Horror,Sci-Fi
+U1115,10/23/22,12/27/23,26,Female,Netherlands,Basic,Mobile,57,25,Yes,No,,,Fantasy,Drama
+U1116,7/26/23,3/25/24,42,,Germany,Basic,TV,62.2,21,No,No,,,Animation,Thriller
+U1117,4/20/22,6/11/23,44,Female,Brazil,Basic,Tablet,176.1,45,Yes,No,6/11/23 10:53,2.6,Sci-Fi,Sci-Fi
+U1118,1/25/21,5/12/24,23,Female,Mexico,Premium,Mobile,66.2,39,No,No,,,Documentary,Animation
+U1119,12/9/23,11/9/24,,Female,Sweden,Free,Mobile,45.5,18,No,No,11/9/24 8:06,2.7,Horror,Romance
+U1120,3/11/22,10/17/24,36,Male,Netherlands,Basic,Laptop,22.9,51,No,No,10/17/24 20:29,3.1,Documentary,Drama
+U1121,11/9/23,11/26/23,18,Male,Sweden,Free,Laptop,72,39,Yes,Yes,,,Fantasy,Fantasy
+U1122,9/15/23,1/5/24,67,Male,Australia,Basic,Tablet,274.7,87,Yes,No,,,Thriller,
+U1123,7/14/23,9/6/23,56,Male,India,Basic,Laptop,52.1,24,Yes,No,,,Comedy,Fantasy
+U1124,6/11/21,9/5/21,72,Male,France,Premium,Mobile,165.2,36,Yes,No,9/5/21 8:56,3.2,Action,Action
+U1125,11/24/21,11/5/24,74,Male,Italy,Basic,Laptop,62.6,38,No,No,11/5/24 22:07,2.9,Horror,Thriller
+U1126,4/6/21,4/21/24,31,Male,Italy,Free,Tablet,193.9,78,Yes,Yes,,,Action,Animation
+U1127,6/14/21,12/12/21,38,Female,United States,Basic,TV,20.8,1,Yes,No,12/12/21 17:06,3.1,Horror,Animation
+U1128,12/1/22,2/20/23,19,Female,Germany,Premium,Tablet,39.6,1,Yes,No,,,Documentary,Comedy
+U1129,10/20/23,11/8/24,20,Male,Mexico,Free,Mobile,182.1,100,No,No,,,Documentary,Drama
+U1130,7/23/23,4/3/24,47,Male,Spain,Premium,Laptop,33.2,6,No,No,,,Action,
+U1131,5/4/23,5/1/24,41,Male,United States,Free,Tablet,121.1,49,Yes,Yes,,,Horror,Action
+U1132,5/8/21,5/13/23,34,Female,Germany,Basic,Mobile,105.6,47,Yes,No,5/13/23 9:44,3.3,Documentary,Documentary
+U1133,5/9/24,5/30/24,60,Female,Sweden,Basic,Laptop,42.5,13,No,No,,,Sci-Fi,Thriller
+U1134,9/2/22,8/28/24,54,Male,Brazil,Free,Tablet,100.4,26,No,No,,,Horror,Fantasy
+U1135,11/7/23,4/19/24,42,Male,Spain,Basic,TV,307.7,113,No,No,,,Comedy,Documentary
+U1136,12/8/21,1/3/22,74,,Mexico,Basic,Tablet,187.5,41,Yes,No,,,Comedy,
+U1137,4/1/23,6/28/24,27,Female,Mexico,Basic,Tablet,91.2,50,No,No,6/28/24 17:45,3.9,Horror,Fantasy
+U1138,3/30/23,1/15/24,68,Male,Italy,Premium,Tablet,65.8,1,Yes,No,,,Thriller,Horror
+U1139,11/7/22,2/27/23,76,Female,Netherlands,Free,TV,45.6,2,Yes,No,2/27/23 22:23,4.2,Documentary,Documentary
+U1140,2/10/22,4/19/22,73,Male,United Kingdom,Basic,Laptop,155.4,25,Yes,No,,,Action,Horror
+U1141,8/16/23,8/14/24,60,Female,Japan,Basic,Tablet,215.5,80,No,No,,,Documentary,Animation
+U1142,12/14/22,10/5/23,34,Unknown,United States,Free,Tablet,241.4,58,Yes,Yes,,,Horror,Romance
+U1143,1/25/21,12/23/23,52,Female,Mexico,Basic,Laptop,145,51,Yes,Yes,12/23/23 21:37,3.2,Drama,Animation
+U1144,3/28/23,4/13/23,27,Male,Netherlands,Free,Laptop,51.6,4,Yes,Yes,,,Animation,Action
+U1145,8/4/21,7/8/22,,Female,Australia,Free,Laptop,90.2,30,Yes,Yes,,,Animation,Animation
+U1146,1/9/22,9/10/24,,Female,Spain,Basic,Tablet,207.2,90,No,No,9/10/24 22:58,3,Fantasy,Documentary
+U1147,5/4/22,9/26/24,,Female,Netherlands,Premium,Mobile,93.2,44,No,No,9/26/24 8:22,4.3,Horror,Romance
+U1148,12/1/21,8/21/23,24,Female,Mexico,Free,Mobile,96.1,25,Yes,Yes,,,Animation,Drama
+U1149,9/17/23,9/22/24,56,Male,France,Premium,Laptop,187.3,123,No,No,9/22/24 21:30,4.3,Thriller,Documentary
+U1150,9/22/23,1/7/24,77,,Germany,Basic,Tablet,199.8,63,No,No,,,Action,Documentary
+U1151,9/13/23,3/13/24,40,Male,Mexico,Basic,Tablet,89.3,25,Yes,No,3/13/24 20:21,3.2,Comedy,Animation
+U1152,5/8/22,7/7/23,61,Female,Mexico,Basic,Tablet,292.8,87,No,No,,,Action,Fantasy
+U1153,11/29/23,9/25/24,69,Female,Germany,Premium,Tablet,122.2,101,No,No,9/25/24 19:46,3.6,Horror,Documentary
+U1154,9/23/21,4/5/24,42,Male,India,Basic,TV,125.8,15,No,No,,,Documentary,Thriller
+U1155,1/3/21,12/25/24,31,Female,India,Free,Tablet,147.7,64,No,No,12/25/24 12:24,2.5,Horror,Documentary
+U1156,8/22/23,1/8/24,0,Male,Germany,Premium,Laptop,41.4,5,No,No,1/8/24 19:05,4.2,Thriller,Documentary
+U1157,1/11/21,1/1/24,30,Male,Australia,Free,TV,78.1,16,Yes,Yes,1/1/24 13:52,2,Animation,Action
+U1158,8/14/21,11/16/23,43,Male,France,Basic,Tablet,108.3,37,Yes,Yes,,,Horror,Horror
+U1159,12/28/22,11/15/24,26,Male,Mexico,Basic,Mobile,221.1,132,No,No,11/15/24 21:16,3.7,Drama,Drama
+U1160,1/3/21,6/11/21,52,Male,Sweden,Basic,Laptop,58.3,8,Yes,Yes,,,Comedy,Thriller
+U1161,11/25/21,6/27/23,31,Female,Sweden,Premium,Tablet,106.9,41,Yes,No,6/27/23 18:27,3.6,Animation,Action
+U1162,2/9/21,8/16/24,28,Male,United Kingdom,Basic,Tablet,129.9,26,No,No,,,Comedy,Comedy
+U1163,11/24/21,5/25/24,23,Male,United States,Free,TV,29.1,11,Yes,Yes,5/25/24 10:57,3.3,Fantasy,Fantasy
+U1164,11/30/23,11/17/24,57,Male,South Korea,Free,Laptop,18.9,17,No,No,,,Documentary,Horror
+U1165,3/16/24,8/30/24,45,Male,Brazil,Free,Laptop,150.9,74,No,No,,,Animation,Sci-Fi
+U1166,4/8/24,10/15/24,44,Male,Mexico,Basic,Laptop,61.2,36,Yes,No,10/15/24 17:56,2.8,Thriller,Fantasy
+U1167,3/23/21,3/13/22,19,Female,Canada,Basic,Tablet,158.5,40,Yes,No,,,Animation,Action
+U1168,6/1/24,6/13/24,63,Female,Spain,Free,Laptop,87.5,19,No,No,,,Fantasy,
+U1169,5/16/23,8/5/24,41,Male,Sweden,Premium,Tablet,131.9,49,Yes,No,,,Romance,Thriller
+U1170,8/9/22,3/29/23,49,Female,Canada,Basic,TV,60.1,3,Yes,Yes,3/29/23 12:28,2.9,Thriller,Thriller
+U1171,5/4/24,9/28/24,49,Male,India,Basic,Tablet,144.1,54,No,No,,,Sci-Fi,Documentary
+U1172,6/5/23,6/26/23,43,Male,United States,Premium,Tablet,392.9,99,Yes,No,,,Sci-Fi,Sci-Fi
+U1173,4/5/22,4/11/22,0,Male,Australia,Basic,Tablet,213.9,53,Yes,No,,,Action,Documentary
+U1174,1/8/23,10/19/23,21,Female,Japan,Basic,Laptop,27.8,1,Yes,No,,,Thriller,Action
+U1175,6/6/23,11/9/23,28,Male,South Korea,Basic,Tablet,212.1,76,Yes,Yes,,,Romance,Animation
+U1176,4/29/23,5/14/24,61,Male,Italy,Basic,TV,17,1,No,No,5/14/24 13:14,2.7,Drama,Fantasy
+U1177,5/7/22,11/30/22,44,Male,France,Free,TV,215.8,61,Yes,Yes,11/30/22 12:07,3.2,Horror,Sci-Fi
+U1178,11/17/23,5/8/24,0,Male,Netherlands,Free,TV,65.7,25,Yes,No,5/8/24 19:52,2.9,Action,Drama
+U1179,6/11/22,11/10/22,47,Male,Spain,Basic,TV,165.7,49,Yes,Yes,11/10/22 11:08,3,Documentary,Romance
+U1180,10/14/23,12/30/24,80,Female,Brazil,Free,Tablet,27,36,No,No,12/30/24 15:10,3.1,Sci-Fi,Documentary
+U1181,12/4/21,8/2/23,55,,Mexico,Premium,Tablet,42.7,20,Yes,Yes,8/2/23 13:40,3.5,Fantasy,Horror
+U1182,2/18/23,9/19/23,68,Female,Brazil,Free,Laptop,71.5,15,Yes,No,,,Thriller,Fantasy
+U1183,8/15/22,6/20/23,0,Male,Italy,Free,TV,222.8,70,Yes,Yes,,,Action,Comedy
+U1184,8/30/21,8/31/21,50,Female,South Korea,Basic,Mobile,85.2,15,Yes,No,8/31/21 11:25,3.5,Documentary,Fantasy
+U1185,5/23/21,2/10/24,59,Male,Canada,Premium,TV,52.1,21,Yes,No,2/10/24 10:58,2.9,Horror,Romance
+U1186,1/9/21,2/21/23,26,Male,Spain,Free,Mobile,91.1,17,Yes,No,,,Comedy,Thriller
+U1187,1/13/24,11/25/24,0,,United Kingdom,Free,Tablet,67.5,78,No,No,11/25/24 11:05,3.2,Comedy,Documentary
+U1188,2/25/24,12/17/24,77,Female,India,Free,Mobile,222.2,96,No,No,12/17/24 20:50,3.5,Thriller,Thriller
+U1189,3/16/24,5/9/24,63,Male,Japan,Free,Tablet,36.6,5,No,No,5/9/24 14:31,2.5,Fantasy,Romance
+U1190,11/8/21,3/29/24,76,Female,Italy,Basic,Mobile,221.6,88,No,No,,,Action,Drama
+U1191,4/3/21,8/15/24,50,Female,Italy,Free,Laptop,36.9,35,No,No,,,Sci-Fi,Animation
+U1192,3/16/23,8/12/24,45,Female,Canada,Basic,Laptop,83.4,39,No,No,,,Comedy,Sci-Fi
+U1193,2/24/22,7/8/24,53,Male,Canada,Free,Laptop,172.7,68,No,No,,,Comedy,Thriller
+U1194,1/25/23,1/30/24,75,Male,United States,Free,Mobile,156.8,58,Yes,No,,,Action,Drama
+U1195,1/21/21,7/20/23,50,Male,Japan,Basic,Tablet,34.3,14,Yes,Yes,7/20/23 14:41,3.1,Drama,
+U1196,6/10/22,5/9/23,19,Female,Italy,Free,Laptop,109.6,26,Yes,No,,,Fantasy,Fantasy
+U1197,11/14/21,11/29/22,64,Female,Netherlands,Basic,Laptop,267.6,92,Yes,No,,,Fantasy,Sci-Fi
+U1198,4/18/23,9/9/23,76,Female,Germany,Free,Tablet,42.5,1,No,No,,,Horror,Animation
+U1199,9/18/21,12/21/22,73,Male,Japan,Premium,TV,33.5,3,Yes,No,,,Animation,Documentary
+U1200,10/31/23,5/12/24,71,Unknown,Netherlands,Basic,Tablet,108.5,22,No,No,5/12/24 21:40,4.9,Documentary,Animation
+U1201,8/30/23,8/30/23,74,Unknown,Japan,Basic,Tablet,34.1,18,Yes,No,,,Romance,Horror
+U1202,6/14/21,4/14/22,66,Male,Canada,Basic,Laptop,224.7,73,Yes,No,,,Romance,Animation
+U1203,9/12/22,5/20/23,,Unknown,Australia,Basic,TV,91,24,Yes,No,,,Fantasy,Action
+U1204,5/26/22,3/14/23,37,Male,Canada,Premium,TV,114.9,17,Yes,Yes,,,Thriller,Animation
+U1205,4/30/22,5/25/24,76,Male,India,Free,Mobile,133.9,43,Yes,Yes,5/25/24 17:19,3,Drama,Fantasy
+U1206,8/30/21,1/2/22,51,Female,Brazil,Free,Tablet,21.1,11,Yes,Yes,,,Romance,
+U1207,7/8/23,9/7/24,55,Female,France,Free,TV,178.9,60,No,No,,,Comedy,Fantasy
+U1208,1/10/22,11/6/24,67,Female,Canada,Free,Tablet,131.5,46,No,No,,,Fantasy,Comedy
+U1209,6/1/22,10/8/23,39,Male,Netherlands,Basic,Laptop,175.8,34,No,No,,,Drama,Comedy
+U1210,3/3/22,6/24/22,35,Female,France,Basic,Tablet,193.4,56,Yes,No,,,Drama,Sci-Fi
+U1211,8/11/22,11/27/24,42,Male,Netherlands,Basic,Mobile,210.2,124,No,No,11/27/24 21:52,3.5,Romance,Thriller
+U1212,5/28/24,12/7/24,67,Female,Brazil,Free,Mobile,107.6,67,No,No,12/7/24 16:47,3.2,Action,Sci-Fi
+U1213,8/8/22,9/2/24,30,Female,Mexico,Basic,Mobile,63.6,22,No,No,,,Horror,Thriller
+U1214,1/31/24,6/10/24,55,Male,Spain,Premium,TV,214.4,82,No,No,,,Animation,Comedy
+U1215,5/1/23,4/29/24,28,Male,Australia,Premium,Laptop,31.2,1,No,No,,,Romance,Romance
+U1216,12/26/22,10/10/24,18,Male,Japan,Basic,Laptop,33.5,1,No,No,10/10/24 19:28,4,Documentary,Fantasy
+U1217,10/18/21,1/27/22,43,Male,United Kingdom,Premium,Tablet,420,119,Yes,No,,,Drama,Drama
+U1218,8/20/23,10/22/24,26,Male,Italy,Premium,Tablet,48.6,23,No,No,10/22/24 13:27,4.4,Documentary,Comedy
+U1219,5/29/24,10/29/24,42,Male,France,Basic,Laptop,29.6,1,No,No,,,Animation,Action
+U1220,2/22/23,4/5/23,65,Male,Spain,Premium,Laptop,321.4,91,Yes,No,4/5/23 18:44,4.5,Romance,Horror
+U1221,3/4/23,4/23/23,32,Male,Japan,Premium,Laptop,144.1,24,Yes,No,4/23/23 21:03,3.5,Animation,
+U1222,1/8/22,5/16/23,44,Female,United States,Premium,Tablet,123.1,41,Yes,No,5/16/23 17:35,3,Documentary,Horror
+U1223,10/6/22,1/3/23,,Male,Germany,Basic,TV,190.8,57,Yes,No,,,Sci-Fi,Sci-Fi
+U1224,11/29/23,12/29/24,,Male,United Kingdom,Basic,Tablet,45.7,41,Yes,No,,,Romance,Sci-Fi
+U1225,3/21/22,1/12/23,73,Male,Canada,Free,Laptop,51.4,29,Yes,No,,,Drama,Comedy
+U1226,4/10/24,9/29/24,59,,South Korea,Free,Laptop,82.6,83,No,No,,,Drama,Thriller
+U1227,11/16/23,11/24/23,32,Unknown,Canada,Free,Mobile,116.4,48,Yes,No,,,Horror,Comedy
+U1228,8/7/22,1/5/23,33,Female,Italy,Premium,Mobile,93.9,16,Yes,No,1/5/23 15:18,2.8,Thriller,Romance
+U1229,12/20/23,6/3/24,27,Unknown,Sweden,Basic,TV,153.4,70,No,No,6/3/24 14:49,4.1,Animation,Animation
+U1230,6/3/24,11/10/24,72,,Germany,Premium,TV,65.3,20,No,No,,,Romance,Thriller
+U1231,2/23/22,11/6/24,24,Male,Japan,Free,Laptop,40,8,No,No,,,Romance,Fantasy
+U1232,5/24/22,8/7/23,79,Female,Canada,Basic,TV,30.3,15,Yes,Yes,,,Sci-Fi,Romance
+U1233,9/29/22,3/14/23,58,Male,India,Basic,TV,24.7,10,Yes,Yes,3/14/23 17:31,2.7,Animation,Animation
+U1234,9/13/22,10/18/22,57,Male,Canada,Free,TV,181.2,67,Yes,Yes,,,Thriller,Documentary
+U1235,12/30/23,7/12/24,30,Unknown,Italy,Premium,Mobile,63.9,26,No,No,7/12/24 18:31,4.1,Romance,Romance
+U1236,3/8/21,12/16/23,61,Male,Brazil,Basic,Laptop,24.5,22,Yes,No,12/16/23 14:43,2.3,Drama,Drama
+U1237,9/6/22,4/2/23,52,Male,Spain,Basic,Mobile,84.3,41,Yes,Yes,4/2/23 19:57,3.2,Horror,Action
+U1238,10/14/23,8/19/24,33,Female,Australia,Free,Tablet,113.7,70,No,No,8/19/24 19:16,3.3,Comedy,Comedy
+U1239,9/7/23,9/9/23,33,Unknown,Australia,Premium,Mobile,55.4,12,No,No,9/9/23 13:04,3.8,Animation,Documentary
+U1240,10/13/21,3/10/22,37,Male,Germany,Free,Laptop,147.2,42,Yes,Yes,3/10/22 8:52,2.9,Animation,Fantasy
+U1241,4/5/22,10/6/23,69,Male,Sweden,Basic,TV,41.4,1,Yes,No,,,Action,Action
+U1242,12/7/21,1/15/24,44,Female,Canada,Free,TV,91.2,8,Yes,No,,,Drama,Drama
+U1243,5/4/24,11/29/24,72,Female,Spain,Premium,Tablet,161.3,67,No,No,11/29/24 19:36,4.1,Comedy,Animation
+U1244,3/27/24,10/28/24,,Female,South Korea,Premium,TV,109.7,38,No,No,,,Romance,Horror
+U1245,10/28/23,11/10/23,26,Male,United Kingdom,Basic,Mobile,138.9,48,Yes,Yes,,,Romance,Sci-Fi
+U1246,3/4/23,11/11/23,71,Male,Canada,Free,Laptop,95.2,15,Yes,No,11/11/23 13:45,3.1,Horror,Romance
+U1247,6/18/23,10/12/24,58,,India,Free,TV,124.1,75,Yes,No,10/12/24 12:33,3.3,Thriller,Drama
+U1248,4/2/21,9/26/22,31,Unknown,Italy,Premium,TV,122.8,41,Yes,No,,,Comedy,Drama
+U1249,11/3/22,12/15/22,0,Unknown,Sweden,Basic,TV,71.9,9,Yes,No,,,Comedy,
+U1250,10/8/23,10/12/23,36,Female,Netherlands,Basic,Tablet,137.3,36,Yes,No,10/12/23 9:30,2.5,Sci-Fi,Thriller
+U1251,4/2/22,12/9/24,36,,Japan,Basic,Laptop,58.1,44,No,No,,,Animation,
+U1252,2/4/22,3/8/24,50,Male,South Korea,Premium,TV,132.5,46,No,No,,,Action,Romance
+U1253,3/31/23,11/6/23,69,Female,Sweden,Basic,Laptop,191.9,59,Yes,Yes,11/6/23 12:51,2.8,Sci-Fi,
+U1254,3/31/22,4/9/24,78,Female,Mexico,Basic,TV,18.1,6,No,No,4/9/24 18:20,3.3,Sci-Fi,Action
+U1255,1/12/23,8/24/24,38,Female,Germany,Premium,TV,76.9,40,No,No,,,Horror,Horror
+U1256,3/6/21,1/6/24,38,Male,Japan,Premium,Tablet,157.8,63,No,No,1/6/24 12:44,3.5,Action,Documentary
+U1257,12/1/22,12/30/23,0,Female,Sweden,Basic,TV,100.4,16,Yes,Yes,,,Horror,
+U1258,9/16/22,10/18/24,35,Male,Italy,Free,Laptop,84.7,14,No,No,10/18/24 13:41,2.5,Romance,Horror
+U1259,7/8/22,8/8/23,66,Female,Italy,Basic,Tablet,214.7,46,Yes,Yes,,,Fantasy,Drama
+U1260,1/29/21,2/23/24,27,Female,United Kingdom,Free,Mobile,81.8,30,No,No,,,Romance,Action
+U1261,12/16/22,12/10/24,25,Male,South Korea,Basic,Tablet,132.7,59,No,No,,,Sci-Fi,Comedy
+U1262,4/11/24,6/18/24,49,Female,Brazil,Free,TV,85.4,38,Yes,Yes,6/18/24 15:56,2.7,Comedy,Comedy
+U1263,2/12/22,12/7/23,34,Male,Sweden,Basic,Tablet,117.2,25,Yes,No,,,Fantasy,Drama
+U1264,1/1/22,3/12/23,32,Male,India,Free,Laptop,199.3,47,Yes,Yes,3/12/23 17:04,3.9,Romance,Romance
+U1265,12/16/21,5/19/23,27,Female,Japan,Premium,Tablet,178.7,62,Yes,No,,,Fantasy,Comedy
+U1266,8/4/23,8/19/24,21,Female,Spain,Basic,Laptop,158.8,89,No,No,8/19/24 21:49,3.5,Comedy,
+U1267,2/9/23,2/17/24,30,Male,United States,Basic,Tablet,189.4,74,Yes,No,,,Animation,Animation
+U1268,6/11/23,1/22/24,28,Male,Brazil,Premium,Laptop,177.1,60,No,No,,,Documentary,Drama
+U1269,5/3/22,8/6/24,31,Male,Brazil,Free,Tablet,41.2,27,No,No,8/6/24 21:19,3.3,Documentary,Comedy
+U1270,4/10/24,9/30/24,,Female,Italy,Basic,Mobile,35.9,36,No,No,,,Romance,Thriller
+U1271,2/19/23,10/9/23,64,Female,Canada,Basic,Mobile,179.3,40,Yes,No,,,Fantasy,Animation
+U1272,10/29/21,6/23/22,24,Male,Italy,Free,Mobile,180.6,40,Yes,No,6/23/22 19:28,3.1,Drama,Comedy
+U1273,4/8/22,6/17/23,,Female,Netherlands,Free,Tablet,81.9,22,Yes,Yes,,,Fantasy,Romance
+U1274,3/29/21,2/29/24,30,Male,Sweden,Free,Mobile,22.5,18,No,No,,,Horror,Thriller
+U1275,5/30/22,5/1/24,71,Male,India,Basic,Tablet,180.9,79,Yes,No,5/1/24 22:24,3.6,Sci-Fi,
+U1276,2/9/24,6/23/24,59,Female,United States,Free,Laptop,202.4,85,No,No,,,Comedy,Horror
+U1277,5/30/22,8/21/23,21,Female,India,Basic,Mobile,87.7,14,Yes,Yes,,,Animation,Action
+U1278,4/18/22,4/27/22,38,Female,Spain,Basic,TV,166.8,61,Yes,No,,,Drama,Action
+U1279,7/26/23,11/14/23,30,Female,Spain,Free,Laptop,239.4,100,No,No,,,Comedy,Thriller
+U1280,11/10/21,5/29/23,29,Female,Japan,Basic,Laptop,54.3,21,Yes,No,,,Comedy,Sci-Fi
+U1281,11/10/23,1/23/24,33,Male,Netherlands,Free,TV,61.4,9,Yes,Yes,1/23/24 12:57,3.7,Action,Comedy
+U1282,6/20/22,2/1/23,43,Male,Japan,Premium,TV,39.6,28,Yes,No,2/1/23 12:09,2.8,Documentary,Romance
+U1283,7/31/23,2/3/24,74,Female,South Korea,Basic,Tablet,27.9,1,Yes,Yes,,,Horror,Documentary
+U1284,5/29/24,6/11/24,20,Unknown,Canada,Free,Laptop,95.6,27,No,No,,,Documentary,Horror
+U1285,6/19/23,12/5/24,51,Male,Sweden,Free,Tablet,235.3,144,No,No,,,Action,Horror
+U1286,7/4/23,5/17/24,63,Male,Japan,Basic,TV,140.8,41,No,No,,,Thriller,Horror
+U1287,9/25/23,1/19/24,48,Male,India,Free,TV,92.6,46,Yes,No,,,Drama,Comedy
+U1288,7/2/21,10/22/21,72,Female,France,Basic,Laptop,61.8,2,Yes,No,,,Comedy,Drama
+U1289,4/21/22,5/22/24,64,Male,Netherlands,Basic,Laptop,43.3,45,No,No,,,Drama,Animation
+U1290,12/7/23,6/21/24,64,Female,United Kingdom,Free,TV,65.6,43,No,No,,,Drama,Drama
+U1291,4/17/23,9/2/24,69,Male,Japan,Basic,Tablet,29,1,No,No,,,Drama,Animation
+U1292,9/11/21,8/21/23,34,Male,United States,Basic,Laptop,64.8,3,No,No,,,Thriller,Sci-Fi
+U1293,2/18/21,8/23/23,27,Female,United Kingdom,Free,Laptop,97.6,30,Yes,No,8/23/23 21:38,1.4,Documentary,Fantasy
+U1294,9/4/22,12/19/24,58,Male,Germany,Premium,Tablet,104.7,32,No,No,12/19/24 22:19,4.1,Romance,
+U1295,9/12/23,10/17/23,38,Male,Spain,Free,TV,38.6,1,Yes,No,,,Romance,Fantasy
+U1296,5/28/24,6/10/24,73,Male,South Korea,Free,Mobile,83.1,36,Yes,Yes,6/10/24 16:12,2.9,Comedy,Sci-Fi
+U1297,8/19/22,12/15/24,75,Male,India,Basic,Mobile,56.1,2,No,No,12/15/24 18:06,2.9,Fantasy,Comedy
+U1298,10/1/22,11/3/23,35,Female,Canada,Basic,Tablet,131.4,56,Yes,Yes,11/3/23 14:20,3.6,Thriller,Romance
+U1299,5/22/21,11/2/21,75,,Brazil,Premium,Tablet,172.9,51,Yes,Yes,,,Comedy,Sci-Fi
+U1300,9/11/23,7/11/24,36,Male,Spain,Basic,Laptop,58.4,14,No,No,,,Documentary,Documentary
+U1301,10/14/23,9/4/24,39,Female,Germany,Premium,Laptop,322.3,124,No,No,9/4/24 9:27,4.6,Action,
+U1302,2/12/21,4/10/22,39,Female,Germany,Premium,Laptop,420,124,Yes,Yes,,,Drama,Thriller
+U1303,9/2/22,3/31/24,27,Female,Italy,Basic,TV,139.1,63,Yes,No,3/31/24 10:38,3.8,Drama,Thriller
+U1304,7/25/22,5/4/24,52,Male,Japan,Basic,Laptop,59.1,12,No,No,,,Drama,Animation
+U1305,1/26/22,10/29/22,37,Unknown,South Korea,Free,TV,131.7,44,Yes,No,10/29/22 22:55,3.5,Thriller,Romance
+U1306,8/1/21,10/18/21,39,Female,South Korea,Basic,Tablet,69.6,11,Yes,No,,,Fantasy,
+U1307,11/11/22,1/7/23,45,Female,Netherlands,Basic,TV,98.1,18,Yes,No,1/7/23 8:41,2.9,Documentary,
+U1308,8/24/22,9/6/23,67,Female,Netherlands,Free,Tablet,189.4,36,Yes,No,9/6/23 19:09,3.1,Animation,Animation
+U1309,5/23/22,9/10/23,58,Male,France,Basic,Mobile,317.6,98,No,No,,,Fantasy,Thriller
+U1310,7/13/22,3/7/23,57,Female,Germany,Premium,TV,235.9,47,Yes,Yes,,,Fantasy,Animation
+U1311,10/10/21,11/18/21,,Male,United States,Free,Laptop,199.2,49,Yes,No,11/18/21 15:36,3.3,Drama,Animation
+U1312,11/19/22,7/29/24,,Male,Canada,Premium,Tablet,227.7,85,No,No,,,Sci-Fi,Sci-Fi
+U1313,6/28/22,4/6/24,29,Male,Italy,Premium,Tablet,58.3,37,No,No,,,Drama,Drama
+U1314,2/7/24,2/27/24,47,Female,Netherlands,Basic,TV,41.7,20,No,No,2/27/24 22:58,3.7,Drama,Romance
+U1315,5/11/21,4/28/22,21,Male,India,Basic,Laptop,54.9,6,Yes,No,4/28/22 20:08,3.4,Romance,Fantasy
+U1316,10/8/22,5/6/23,77,Female,Spain,Basic,TV,81.5,1,Yes,No,5/6/23 19:08,3.5,Horror,Horror
+U1317,8/11/22,11/29/23,47,Male,Mexico,Basic,Laptop,65.7,29,Yes,No,,,Fantasy,Romance
+U1318,7/9/21,3/15/24,52,Female,Sweden,Premium,Mobile,171.9,51,No,No,3/15/24 17:10,3,Drama,
+U1319,10/6/21,3/19/24,0,Male,India,Basic,TV,197.4,64,No,No,,,Documentary,Romance
+U1320,7/20/23,5/3/24,37,Unknown,Netherlands,Basic,TV,70.1,30,No,No,,,Sci-Fi,Horror
+U1321,9/5/21,2/7/22,64,,France,Basic,Laptop,125.5,31,Yes,Yes,,,Sci-Fi,Thriller
+U1322,8/26/23,4/28/24,40,Female,Italy,Basic,TV,86.7,23,No,No,,,Documentary,Comedy
+U1323,5/23/21,9/18/24,38,Male,France,Free,Laptop,124.4,58,No,No,9/18/24 14:08,3.9,Fantasy,Fantasy
+U1324,8/7/21,9/17/22,76,Male,United Kingdom,Premium,Mobile,150.6,22,Yes,No,,,Documentary,Romance
+U1325,9/4/22,1/17/24,,Male,United Kingdom,Basic,TV,9,6,Yes,No,1/17/24 21:58,2.9,Sci-Fi,Romance
+U1326,10/8/21,12/5/22,41,Female,Mexico,Premium,Mobile,154.9,34,Yes,Yes,12/5/22 10:41,4.1,Fantasy,Action
+U1327,2/26/23,3/29/24,73,Male,France,Free,Laptop,57.8,7,Yes,No,,,Thriller,Action
+U1328,10/13/21,7/4/22,50,Female,Mexico,Free,Mobile,93.3,34,Yes,No,,,Action,Documentary
+U1329,9/28/23,12/13/24,31,Male,Australia,Basic,Tablet,22.8,19,No,No,,,Drama,
+U1330,2/25/24,11/5/24,72,,Canada,Free,Laptop,158.2,65,No,No,,,Sci-Fi,Thriller
+U1331,9/25/21,8/18/24,28,Male,France,Basic,Mobile,174.8,76,No,No,,,Fantasy,
+U1332,10/10/23,4/27/24,78,Male,India,Basic,Laptop,217.1,73,No,No,4/27/24 13:11,4.1,Animation,Action
+U1333,7/13/22,12/21/23,58,Male,Spain,Basic,Laptop,44.9,8,No,No,12/21/23 12:50,4.4,Horror,Horror
+U1334,5/12/21,4/24/22,45,Male,United States,Basic,Tablet,169.1,36,Yes,No,4/24/22 18:54,2.9,Horror,Fantasy
+U1335,1/16/24,10/3/24,39,Female,Australia,Free,Mobile,47.9,1,No,No,,,Thriller,Documentary
+U1336,12/31/22,10/9/23,25,Male,Spain,Basic,Laptop,89.4,7,Yes,No,10/9/23 20:48,3.4,Documentary,Romance
+U1337,1/19/23,12/7/24,30,Female,Spain,Basic,Laptop,34.8,22,No,No,,,Drama,
+U1338,5/15/23,4/19/24,70,Female,India,Premium,TV,144.8,26,No,No,4/19/24 21:40,4.1,Animation,Documentary
+U1339,3/28/23,9/30/24,34,Unknown,South Korea,Basic,Laptop,80.5,22,No,No,9/30/24 16:38,3.4,Thriller,Comedy
+U1340,6/26/23,5/23/24,80,Male,Netherlands,Basic,Tablet,111.4,22,No,No,5/23/24 19:07,2.7,Action,Fantasy
+U1341,8/15/23,12/27/24,62,Female,France,Free,Laptop,20.2,27,No,No,12/27/24 14:27,3.5,Comedy,Documentary
+U1342,6/23/21,3/23/24,64,Male,Italy,Basic,Tablet,137.5,71,Yes,No,,,Drama,Romance
+U1343,9/17/23,2/24/24,0,Male,Canada,Free,TV,158,42,Yes,Yes,,,Horror,Action
+U1344,2/16/22,9/8/24,0,Male,Spain,Premium,Laptop,93.5,50,No,No,9/8/24 22:28,3.8,Thriller,Romance
+U1345,7/21/21,10/13/22,68,Male,Mexico,Free,TV,81.1,22,Yes,No,,,Animation,Action
+U1346,2/16/24,9/3/24,74,Male,Australia,Free,Laptop,69.4,25,No,No,9/3/24 12:01,3.3,Horror,Sci-Fi
+U1347,10/23/21,7/7/22,34,Male,Brazil,Basic,Tablet,56.3,1,Yes,Yes,,,Action,Action
+U1348,9/13/23,9/3/24,38,Male,Sweden,Basic,Mobile,269.9,115,No,No,,,Thriller,Action
+U1349,10/4/21,11/7/24,35,Female,Canada,Free,Tablet,22.6,12,No,No,11/7/24 13:57,2.7,Romance,Drama
+U1350,4/26/24,8/11/24,51,Male,Spain,Basic,Tablet,47.5,1,No,No,8/11/24 16:22,3.3,Romance,Romance
+U1351,11/10/22,8/26/23,73,Female,Netherlands,Free,Mobile,82.6,18,Yes,No,,,Thriller,Thriller
+U1352,4/13/23,10/22/23,64,Male,Sweden,Premium,Tablet,129.6,36,Yes,No,10/22/23 19:34,3.4,Thriller,Animation
+U1353,10/4/23,2/6/24,28,Male,France,Free,Tablet,179.1,44,No,No,,,Comedy,Animation
+U1354,7/19/23,9/30/24,29,,Spain,Basic,Mobile,47.1,23,No,No,9/30/24 9:04,3.5,Sci-Fi,Romance
+U1355,3/16/21,9/23/22,,Female,India,Premium,Tablet,81.5,10,Yes,No,,,Romance,Fantasy
+U1356,9/19/21,1/21/22,32,Female,India,Premium,Laptop,89.5,24,Yes,No,1/21/22 12:41,3.4,Comedy,Sci-Fi
+U1357,11/25/23,2/19/24,,Female,Italy,Basic,Mobile,112.4,38,Yes,No,2/19/24 20:12,3.2,Comedy,Animation
+U1358,4/19/21,1/21/24,,Female,Canada,Basic,Tablet,140.1,45,No,No,,,Thriller,Action
+U1359,11/5/22,11/4/23,39,Female,Brazil,Free,Laptop,115.2,28,Yes,No,,,Sci-Fi,Romance
+U1360,2/7/24,3/28/24,75,,United Kingdom,Free,Laptop,170,43,No,No,,,Romance,Action
+U1361,10/27/21,3/14/22,56,Unknown,Canada,Basic,Laptop,50.4,16,Yes,No,3/14/22 20:34,2.4,Sci-Fi,Action
+U1362,2/9/24,6/26/24,53,Male,Mexico,Free,Laptop,107.3,57,No,No,6/26/24 17:18,3,Thriller,Documentary
+U1363,6/1/22,3/18/24,54,Female,Italy,Free,Laptop,119.7,46,No,No,,,Animation,Thriller
+U1364,3/9/24,11/9/24,,Unknown,South Korea,Basic,TV,142,60,No,No,11/9/24 8:55,3.9,Horror,Fantasy
+U1365,7/12/22,12/17/23,0,Male,India,Free,Laptop,41.1,13,Yes,No,,,Horror,Drama
+U1366,8/5/22,6/29/24,75,Male,Brazil,Basic,TV,420,150,No,No,,,Sci-Fi,Romance
+U1367,2/11/22,3/16/23,44,Unknown,Sweden,Free,Tablet,9.6,36,Yes,No,,,Action,Romance
+U1368,9/1/23,4/6/24,35,Female,Brazil,Free,Laptop,303.4,93,No,No,,,Drama,
+U1369,6/22/23,6/20/24,52,Male,Mexico,Free,TV,75.3,27,No,No,6/20/24 8:16,2.8,Thriller,Action
+U1370,3/19/22,7/2/24,30,Male,Germany,Basic,Laptop,53.8,33,Yes,Yes,7/2/24 9:31,2.6,Fantasy,Romance
+U1371,11/14/22,6/1/24,27,Female,Germany,Premium,Laptop,86.1,22,No,No,,,Fantasy,Documentary
+U1372,7/13/21,6/8/23,47,Female,Australia,Free,TV,57.3,24,Yes,Yes,6/8/23 8:35,2.5,Drama,Fantasy
+U1373,5/21/21,2/27/23,22,Female,India,Free,Mobile,99.9,29,Yes,No,2/27/23 10:01,3,Documentary,Thriller
+U1374,3/13/23,3/30/24,21,Female,Mexico,Basic,Laptop,59.8,19,Yes,No,3/30/24 10:13,4,Fantasy,Thriller
+U1375,2/14/21,5/7/21,76,Female,Germany,Basic,Tablet,161.9,36,Yes,No,5/7/21 9:41,3.6,Fantasy,Drama
+U1376,4/26/24,6/30/24,19,Female,France,Basic,Tablet,195.5,99,No,No,6/30/24 9:38,4.4,Drama,Horror
+U1377,1/3/23,8/21/23,70,Female,India,Premium,Laptop,102.1,11,Yes,No,8/21/23 20:20,3.6,Drama,Drama
+U1378,12/13/23,9/12/24,74,Male,Australia,Free,Mobile,49.7,32,Yes,No,9/12/24 21:09,2.9,Action,
+U1379,10/22/22,3/30/23,67,Male,Canada,Free,TV,198.2,63,Yes,No,3/30/23 15:14,3.5,Sci-Fi,Drama
+U1380,11/20/23,5/28/24,21,Male,United States,Basic,Laptop,135.1,44,No,No,,,Thriller,Drama
+U1381,4/30/23,4/17/24,80,Male,Japan,Basic,Tablet,62.4,23,No,No,,,Documentary,Sci-Fi
+U1382,10/21/21,5/17/22,40,Female,France,Free,Laptop,38.9,36,Yes,No,,,Drama,Action
+U1383,7/29/23,1/1/24,45,Female,India,Free,Tablet,71,12,Yes,No,,,Thriller,Fantasy
+U1384,3/4/22,11/5/23,35,Female,Netherlands,Basic,Laptop,91.1,36,Yes,No,,,Fantasy,Documentary
+U1385,9/16/22,4/5/24,29,Female,France,Free,Mobile,47.6,22,Yes,Yes,,,Fantasy,Animation
+U1386,7/18/23,1/8/24,40,,United States,Premium,Mobile,172.3,50,Yes,Yes,1/8/24 15:43,3.7,Animation,Drama
+U1387,6/17/22,10/15/24,0,Female,India,Basic,Tablet,118.2,46,No,No,10/15/24 12:53,3.8,Action,Sci-Fi
+U1388,5/21/23,11/10/24,0,Male,Mexico,Basic,TV,97.3,67,No,No,11/10/24 21:34,3.8,Romance,Romance
+U1389,1/29/24,2/28/24,19,Female,Australia,Basic,Mobile,31.8,5,Yes,No,2/28/24 15:21,4.1,Sci-Fi,Horror
+U1390,1/29/24,5/16/24,40,Male,Spain,Premium,Mobile,28.3,23,No,No,,,Sci-Fi,Sci-Fi
+U1391,10/1/21,7/23/24,45,Male,South Korea,Basic,Mobile,79,65,Yes,Yes,7/23/24 12:59,2.8,Sci-Fi,
+U1392,4/28/21,6/20/21,0,Female,Spain,Basic,Laptop,90.9,32,Yes,Yes,,,Fantasy,Action
+U1393,7/12/22,12/18/23,0,Male,United Kingdom,Basic,Laptop,68.7,18,No,No,,,Horror,Sci-Fi
+U1394,1/22/22,5/12/22,0,Male,India,Premium,Tablet,51.3,11,Yes,No,,,Animation,Horror
+U1395,6/25/22,12/12/22,42,Male,Canada,Basic,Tablet,139.7,59,Yes,Yes,12/12/22 11:54,3.4,Action,Sci-Fi
+U1396,2/23/23,6/1/24,57,Female,Italy,Basic,Laptop,55.3,23,No,No,,,Thriller,Animation
+U1397,1/15/23,11/18/24,54,Female,Germany,Basic,Laptop,195.4,79,No,No,11/18/24 11:56,4,Comedy,
+U1398,9/15/22,7/18/23,26,Male,Australia,Free,TV,90.6,28,Yes,No,,,Animation,Documentary
+U1399,12/5/23,7/5/24,0,Male,United States,Premium,TV,248.4,106,No,No,,,Comedy,Romance
+U1400,6/6/21,2/5/23,51,Female,Netherlands,Basic,Mobile,151.4,39,Yes,Yes,2/5/23 17:03,4.3,Comedy,Comedy
+U1401,2/2/24,5/30/24,22,Male,Spain,Free,Tablet,305.7,126,No,No,,,Sci-Fi,Fantasy
+U1402,6/24/22,3/28/23,58,Male,Italy,Basic,Laptop,160.9,34,Yes,No,3/28/23 16:25,3.6,Comedy,Animation
+U1403,9/24/21,12/28/22,70,Female,Sweden,Basic,Laptop,249.7,80,Yes,No,,,Romance,Horror
+U1404,7/18/22,10/27/22,41,Male,France,Basic,Laptop,146.7,32,Yes,No,,,Action,Comedy
+U1405,11/17/22,7/16/23,43,Female,United States,Free,TV,91.3,13,Yes,Yes,,,Documentary,Drama
+U1406,8/4/23,9/28/24,,Male,United Kingdom,Free,TV,77.7,35,No,No,,,Comedy,Documentary
+U1407,10/4/21,12/30/22,23,Female,United Kingdom,Basic,Mobile,22.5,4,Yes,Yes,,,Fantasy,Horror
+U1408,12/15/22,10/12/23,30,Female,Sweden,Premium,TV,280.9,89,No,No,,,Action,Comedy
+U1409,6/4/22,8/5/23,62,,Mexico,Basic,Laptop,116.9,36,Yes,Yes,8/5/23 19:43,3.4,Romance,Fantasy
+U1410,9/29/21,5/1/23,,Female,United Kingdom,Free,Mobile,19.8,10,Yes,No,,,Documentary,Drama
+U1411,11/9/23,9/14/24,55,Male,Brazil,Basic,TV,115.4,52,No,No,,,Thriller,Thriller
+U1412,6/2/23,12/23/24,78,Male,Canada,Basic,Tablet,138.1,68,No,No,12/23/24 20:41,3.4,Horror,Horror
+U1413,4/13/23,6/12/24,56,Female,Japan,Free,Mobile,172.8,73,No,No,6/12/24 12:09,4.2,Horror,Comedy
+U1414,3/25/24,12/4/24,,Unknown,Japan,Premium,Laptop,39.6,30,Yes,No,12/4/24 9:54,2.9,Animation,Fantasy
+U1415,3/24/24,8/11/24,62,Female,Mexico,Basic,TV,171.1,60,No,No,,,Romance,Action
+U1416,10/29/22,4/26/24,68,Unknown,Australia,Basic,Laptop,24.2,1,Yes,No,4/26/24 10:19,4.1,Romance,Horror
+U1417,9/21/22,5/18/24,52,,Netherlands,Premium,Tablet,110.9,32,No,No,5/18/24 8:17,4.1,Comedy,Fantasy
+U1418,1/20/24,4/10/24,,Female,Mexico,Premium,Mobile,27.4,1,Yes,No,4/10/24 20:19,2.9,Animation,Horror
+U1419,11/11/21,10/10/24,58,Female,Australia,Premium,Laptop,160.5,57,No,No,,,Romance,Action
+U1420,12/10/22,8/22/23,28,Male,United Kingdom,Free,Tablet,12.9,21,Yes,Yes,8/22/23 10:18,3.1,Fantasy,Romance
+U1421,11/23/21,4/25/22,57,Female,Sweden,Basic,Tablet,82.3,29,Yes,Yes,4/25/22 11:14,3.4,Thriller,Drama
+U1422,9/20/22,1/6/23,46,Male,France,Premium,TV,58.3,4,Yes,No,1/6/23 21:27,3.3,Comedy,Drama
+U1423,12/8/22,12/9/23,41,Male,Spain,Free,Laptop,140.9,34,No,No,,,Romance,Documentary
+U1424,10/25/23,9/11/24,51,Male,United Kingdom,Free,Laptop,190,53,No,No,,,Fantasy,Horror
+U1425,10/6/21,2/29/24,,Male,Mexico,Premium,Tablet,147.9,55,No,No,2/29/24 16:56,3.8,Romance,Romance
+U1426,7/20/22,6/10/23,54,,Italy,Premium,Laptop,57.9,22,No,No,6/10/23 12:19,3.4,Sci-Fi,Sci-Fi
+U1427,2/24/22,3/15/24,58,Female,Spain,Free,Tablet,39,1,No,No,,,Action,Romance
+U1428,12/3/22,5/22/24,65,Male,Mexico,Free,Tablet,50.7,12,No,No,5/22/24 18:46,2.6,Sci-Fi,Action
+U1429,5/19/22,6/9/22,38,Male,Australia,Free,Tablet,31.8,10,Yes,No,6/9/22 14:30,2.3,Drama,Action
+U1430,2/6/23,10/17/23,26,Female,Netherlands,Basic,Mobile,147.1,37,Yes,Yes,,,Thriller,Animation
+U1431,2/24/23,9/5/24,0,Male,Sweden,Basic,Laptop,390.7,180,No,No,,,Drama,Drama
+U1432,1/31/24,9/27/24,,Female,Canada,Basic,Tablet,175.6,38,No,No,,,Fantasy,Romance
+U1433,5/4/22,10/14/24,0,Female,Japan,Premium,TV,132.2,80,No,No,10/14/24 18:05,4.5,Action,Thriller
+U1434,10/4/23,11/13/24,75,Male,Australia,Free,Laptop,137.1,73,Yes,No,11/13/24 18:40,2.8,Action,Documentary
+U1435,9/2/21,3/16/23,29,Female,Brazil,Free,Mobile,61.1,34,Yes,No,,,Thriller,Drama
+U1436,8/21/23,12/6/24,32,Male,United Kingdom,Premium,Laptop,12.8,21,No,No,12/6/24 8:18,3.5,Comedy,Horror
+U1437,5/3/22,7/19/22,75,Male,Brazil,Basic,Laptop,206.5,60,Yes,Yes,7/19/22 15:58,3.6,Horror,Animation
+U1438,4/6/24,10/15/24,22,Unknown,Brazil,Free,Laptop,201.6,88,No,No,10/15/24 21:34,3.8,Sci-Fi,Comedy
+U1439,12/17/22,7/30/24,76,Male,Brazil,Basic,Laptop,117.4,53,No,No,,,Documentary,Romance
+U1440,3/4/22,8/2/24,74,Female,Mexico,Basic,Tablet,61.2,38,No,No,8/2/24 10:49,3.5,Fantasy,Sci-Fi
+U1441,5/15/22,8/21/23,0,,South Korea,Basic,TV,110.5,16,Yes,No,8/21/23 19:16,3,Horror,Sci-Fi
+U1442,1/26/24,1/30/24,0,Female,India,Basic,Laptop,62.3,40,Yes,No,,,Comedy,Action
+U1443,12/19/23,1/20/24,79,Female,Sweden,Basic,Tablet,85.3,19,No,No,,,Animation,Fantasy
+U1444,7/13/22,5/21/24,21,Female,Sweden,Basic,Laptop,66.1,30,No,No,,,Thriller,Horror
+U1445,5/8/21,6/6/23,37,Female,Canada,Premium,Laptop,52.8,4,Yes,Yes,6/6/23 16:07,3.5,Thriller,Romance
+U1446,11/18/21,4/19/23,75,Unknown,Italy,Basic,Laptop,99.5,43,Yes,Yes,4/19/23 17:19,2.9,Sci-Fi,Horror
+U1447,5/12/24,7/21/24,76,Male,Germany,Basic,TV,134.9,96,No,No,,,Action,Sci-Fi
+U1448,8/9/22,1/21/23,39,Female,Italy,Free,Mobile,106.8,17,Yes,No,,,Drama,Drama
+U1449,8/18/21,9/6/21,44,Male,United States,Free,Mobile,255.6,62,Yes,No,9/6/21 10:46,4.1,Animation,Animation
+U1450,7/14/22,6/4/23,58,Male,Japan,Basic,TV,199.2,77,Yes,Yes,6/4/23 18:21,2.9,Horror,Documentary
+U1451,7/14/22,12/20/24,73,Male,Japan,Basic,Mobile,285.4,155,No,No,12/20/24 19:00,4.5,Horror,Documentary
+U1452,3/6/24,8/16/24,36,Female,Japan,Premium,Tablet,104.5,64,Yes,Yes,,,Action,Action
+U1453,9/10/22,11/17/24,23,Female,Japan,Basic,Laptop,79.6,21,No,No,,,Thriller,
+U1454,2/25/24,11/21/24,21,Male,Canada,Premium,Tablet,106.3,84,No,No,11/21/24 16:40,4.7,Animation,Drama
+U1455,7/31/21,9/7/21,66,Female,France,Free,Laptop,38.7,1,Yes,No,,,Action,
+U1456,3/30/24,4/14/24,,Male,India,Basic,TV,136.5,56,No,No,,,Comedy,Horror
+U1457,11/15/21,6/26/23,73,Female,Australia,Basic,TV,143.3,25,No,No,,,Horror,Animation
+U1458,8/26/22,9/13/24,25,Female,Mexico,Basic,TV,89.4,28,No,No,9/13/24 13:42,4.1,Fantasy,Fantasy
+U1459,5/15/23,11/13/24,26,Male,Netherlands,Basic,Laptop,76.1,28,No,No,11/13/24 17:42,4.3,Comedy,Animation
+U1460,4/26/24,12/11/24,75,Male,Canada,Free,TV,420,180,No,No,,,Action,Thriller
+U1461,4/2/21,6/3/21,39,Female,Australia,Free,Laptop,120.5,47,Yes,No,,,Romance,Comedy
+U1462,5/22/24,10/3/24,78,Female,Netherlands,Free,Laptop,60.4,26,Yes,No,,,Action,Romance
+U1463,2/27/24,2/29/24,,Male,Australia,Basic,Tablet,298.2,89,No,No,,,Romance,Drama
+U1464,11/28/23,11/2/24,65,Female,Netherlands,Premium,Tablet,298.9,142,No,No,,,Drama,Drama
+U1465,8/30/21,11/27/22,0,Female,South Korea,Basic,TV,176.2,53,Yes,No,11/27/22 11:04,2.8,Animation,Romance
+U1466,11/8/21,11/23/23,40,Female,Mexico,Premium,Tablet,60.1,14,Yes,Yes,,,Fantasy,Thriller
+U1467,6/2/21,11/27/22,72,Female,United States,Premium,Tablet,132,23,Yes,Yes,11/27/22 17:57,2.8,Comedy,Horror
+U1468,4/28/23,8/2/23,66,Unknown,Sweden,Basic,TV,86.3,14,Yes,No,,,Comedy,Horror
+U1469,7/1/22,8/8/22,39,Male,Brazil,Basic,Tablet,254.4,70,Yes,Yes,8/8/22 19:22,3.4,Documentary,Documentary
+U1470,12/27/22,3/27/24,46,Female,United States,Basic,TV,274.6,121,No,No,,,Documentary,Horror
+U1471,5/10/22,1/23/24,40,Unknown,Canada,Premium,Laptop,71,31,Yes,No,1/23/24 12:05,3.6,Documentary,
+U1472,11/8/23,2/9/24,,Male,South Korea,Basic,TV,83,33,Yes,No,,,Thriller,Comedy
+U1473,10/17/23,2/8/24,53,Male,Netherlands,Basic,Tablet,84.7,23,No,No,2/8/24 14:54,2.8,Animation,Horror
+U1474,2/16/22,2/13/23,0,Male,United States,Free,Tablet,55.9,1,Yes,No,,,Thriller,Romance
+U1475,1/19/21,8/1/21,27,Female,United States,Free,Tablet,13.8,1,Yes,Yes,,,Action,Romance
+U1476,5/21/21,6/17/23,18,Female,Germany,Free,Mobile,135.6,26,Yes,No,,,Sci-Fi,Documentary
+U1477,9/2/21,12/12/23,78,Male,Germany,Basic,Mobile,109.2,38,No,No,12/12/23 14:12,3.2,Comedy,Romance
+U1478,11/1/21,8/27/24,75,Male,United States,Free,Mobile,5,6,Yes,No,,,Sci-Fi,Comedy
+U1479,6/13/22,11/30/22,,Female,South Korea,Basic,TV,99.3,18,Yes,No,11/30/22 12:42,3.5,Animation,Animation
+U1480,10/30/22,1/10/23,73,Female,Spain,Premium,Laptop,151.7,52,Yes,No,1/10/23 16:50,3.5,Action,Comedy
+U1481,8/5/23,2/19/24,31,Male,Brazil,Free,TV,203,69,No,No,2/19/24 22:02,3.6,Animation,Romance
+U1482,6/9/24,11/1/24,68,Female,Spain,Free,Mobile,49.8,1,Yes,No,11/1/24 15:35,2.7,Animation,
+U1483,1/2/23,4/27/23,74,Male,Sweden,Free,Tablet,84.9,26,Yes,No,,,Fantasy,
+U1484,12/1/21,5/16/23,46,Female,France,Basic,Mobile,16.4,11,Yes,Yes,,,Animation,Horror
+U1485,7/25/21,9/2/21,76,Male,South Korea,Premium,Mobile,56.9,31,Yes,No,9/2/21 18:57,3.7,Animation,Sci-Fi
+U1486,7/15/22,6/27/23,48,,France,Basic,Laptop,38.7,13,Yes,No,,,Horror,Thriller
+U1487,3/5/24,9/21/24,75,Male,United States,Basic,TV,263.5,79,No,No,9/21/24 17:51,4.3,Thriller,Animation
+U1488,4/30/22,11/26/22,61,,Germany,Free,Mobile,48.9,19,Yes,Yes,,,Thriller,Fantasy
+U1489,8/8/21,2/18/24,75,Male,United States,Basic,Tablet,118.2,44,No,No,,,Fantasy,
+U1490,5/8/23,9/8/24,54,Male,South Korea,Free,Laptop,233.2,107,No,No,9/8/24 20:12,3.3,Fantasy,Comedy
+U1491,12/19/23,10/26/24,,Male,Canada,Premium,Tablet,70.2,25,No,No,,,Romance,Fantasy
+U1492,12/17/22,9/26/24,61,Male,Italy,Free,TV,24.8,48,No,No,9/26/24 9:11,3.9,Drama,Romance
+U1493,5/8/23,3/20/24,49,Male,United Kingdom,Free,Tablet,228.6,50,No,No,3/20/24 10:37,3,Animation,Animation
+U1494,11/16/22,4/20/23,38,Female,France,Basic,Tablet,210.1,62,Yes,Yes,,,Thriller,Drama
+U1495,9/26/23,12/5/24,32,,United Kingdom,Basic,Mobile,30.4,21,No,No,,,Horror,Sci-Fi
+U1496,12/6/21,6/27/22,,Male,Japan,Basic,TV,100.6,25,Yes,No,6/27/22 13:05,2.4,Action,Thriller
+U1497,8/31/22,7/5/24,32,Male,United States,Basic,Laptop,67.3,28,Yes,Yes,,,Animation,
+U1498,6/21/23,1/23/24,73,Male,United Kingdom,Basic,Tablet,107.9,16,Yes,Yes,1/23/24 14:39,3.4,Animation,Sci-Fi
+U1499,11/27/21,5/7/24,55,Male,Italy,Free,TV,109.1,52,Yes,No,,,Romance,Romance
