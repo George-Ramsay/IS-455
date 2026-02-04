@@ -1,6 +1,4 @@
-# type: ignore
-
-def univariate(df: pd.DataFrame):
+def univariate(df):
   import pandas as pd
   import numpy as np
   import matplotlib.pyplot as plt
@@ -75,7 +73,7 @@ def univariate(df: pd.DataFrame):
 
   return df_results
 
-def drop_columns(df: pd.DataFrame):
+def drop_columns(df):
   import pandas as pd
 
   for col in df.columns:
@@ -90,7 +88,7 @@ def drop_columns(df: pd.DataFrame):
 
   return df
 
-def bin_categories(df: pd.DataFrame, columns=None, min_percent=0.05, min_count=15, drop_below_threshold_other=False):
+def bin_categories(df, columns=None, min_percent=0.05, min_count=15, drop_below_threshold_other=False):
   import pandas as pd
 
   # If columns is None or empty list, apply to every column; otherwise only the listed columns
@@ -119,7 +117,7 @@ def bin_categories(df: pd.DataFrame, columns=None, min_percent=0.05, min_count=1
 
   return df
 
-def missing_data_diagnostics(df: pd.DataFrame, missing_thresh=0.9, verbose=True):
+def missing_data_diagnostics(df, missing_thresh=0.9, verbose=True):
   """
   Report missing data counts, proportions, and heuristic suggested mechanism (MCAR/MAR/MNAR).
   Does not modify the dataframe. MAR vs MNAR cannot be distinguished from data alone;
@@ -216,7 +214,7 @@ def missing_data_diagnostics(df: pd.DataFrame, missing_thresh=0.9, verbose=True)
 
   return result
 
-def missing_data_clean(df: pd.DataFrame, missing_thresh=0.9, imputation_level='simple', diagnostics=False, missing_indicator=False):
+def missing_data_clean(df, missing_thresh=0.9, imputation_level='simple', diagnostics=False, missing_indicator=False):
   """
   Return a cleaned pandas DataFrame with all missing values appropriately filled in.
   (1) Drops columns/rows with proportion missing > missing_thresh;
@@ -301,7 +299,7 @@ def missing_data_clean(df: pd.DataFrame, missing_thresh=0.9, imputation_level='s
 
   return pd.DataFrame(out)
 
-def manage_dates(df: pd.DataFrame, columns=None, startdate=None, enddate=None, date_threshold=0.5):
+def manage_dates(df, columns=None, startdate=None, enddate=None, date_threshold=0.5):
   """
   Convert columns that are valid dates into datetime format and add new features:
   day, month, year, weekday, and hour (only if the column includes a time component).
@@ -346,93 +344,252 @@ def manage_dates(df: pd.DataFrame, columns=None, startdate=None, enddate=None, d
 
   return out
 
-def normalize(df: pd.DataFrame, columns=None, skew_thresh=0.5, inplace=False, return_report=False):
-  """
-  Normalize skewed numeric features by applying transformations and selecting
-  the one with skewness closest to 0.
 
-  Parameters:
-    df (pd.DataFrame): Input dataframe.
-    columns (list|None): Columns to consider. If None, use all numeric columns.
-    skew_thresh (float): Apply transformation only if |skew| > skew_thresh.
-    inplace (bool): If True, modify df in place; otherwise return a copy.
-    return_report (bool): If True, return (df, report) with chosen transforms.
+def normalize(df, columns=None, verbose=True, keep_originals=True):
+  """
+  Reduce skewness of numeric features by trying a menu of transforms and keeping
+  the one that brings skewness closest to zero. New values are stored in a
+  column with suffix '_normalized'.
+
+  For positive skew: tries yeojohnson, sqrt, cbrt, ln.
+  For negative skew: tries yeojohnson, square, cube, exponent (x**4).
+
+  Parameters
+  ----------
+  df : pandas.DataFrame
+      Input dataframe.
+  columns : list of str or None, optional
+      Numeric columns to normalize. If None, all numeric columns are used.
+  verbose : bool, default True
+      If True, print a report of original skew, chosen transform, and new skew per column.
+  keep_originals : bool, default True
+      If True, keep original columns and add *_normalized columns.
+      If False, drop original columns and rename *_normalized to the original name.
+
+  Returns
+  -------
+  tuple of (pandas.DataFrame, dict)
+      - First element: DataFrame with normalized column(s) added (and optionally originals removed).
+      - Second element: dict mapping each output column name to the exact transformation applied.
+        For Yeo-Johnson the value is the lambda (float); otherwise the transform name
+        ('sqrt', 'cbrt', 'ln', 'square', 'cube', 'exponent', 'none').
   """
   import pandas as pd
   import numpy as np
-  try:
-    import scipy.stats as stats
-  except Exception:
-    stats = None
+  from scipy.stats import yeojohnson
 
-  out = df if inplace else df.copy()
+  out = df.copy()
+  numeric_cols = [c for c in out.columns if pd.api.types.is_numeric_dtype(out[c])]
+  # Exclude boolean 0/1 columns from transformation
+  cols_eligible = []
+  for c in numeric_cols:
+    uniq = set(out[c].dropna().unique())
+    if uniq.issubset({0, 1}):
+      continue
+    cols_eligible.append(c)
 
-  if columns is None:
-    cols = [c for c in out.columns if pd.api.types.is_numeric_dtype(out[c])]
+  if columns is not None and len(columns) > 0:
+    to_process = [c for c in columns if c in cols_eligible]
   else:
-    cols = [c for c in columns if c in out.columns and pd.api.types.is_numeric_dtype(out[c])]
+    to_process = list(cols_eligible)
 
-  report = {}
+  report = []
+  transformations = {}  # output_column_name -> lambda (float) or transform name (str)
 
-  def _shift_for_nonneg(s):
-    min_val = s.min(skipna=True)
-    if pd.isna(min_val):
-      return 0.0
-    return abs(min_val) + 1e-6 if min_val <= 0 else 0.0
-
-  for col in cols:
-    ser = out[col].astype(float)
-    if ser.dropna().empty:
+  for col in to_process:
+    x = out[col].astype(float)
+    x_valid = x.dropna()
+    if len(x_valid) < 2:
       continue
+    skew_orig = x.skew()
+    candidates = {}  # name -> series (aligned to out.index)
+    yj_lambda = None  # set when Yeo-Johnson is computed
 
-    orig_skew = float(ser.skew())
-    report[col] = {"original_skew": orig_skew, "applied": None, "best_skew": orig_skew, "shift": 0.0, "lambda": None}
+    # Yeo-Johnson works for any real values
+    try:
+      yj_vals, yj_lambda = yeojohnson(x_valid)
+      yj_series = x.copy()
+      yj_series.loc[x_valid.index] = yj_vals
+      candidates["yeojohnson"] = yj_series
+    except Exception:
+      pass
 
-    if abs(orig_skew) <= skew_thresh:
-      continue
-
-    candidates = []
-
-    if orig_skew > 0:
-      shift = _shift_for_nonneg(ser)
-      candidates.append(("sqrt", np.sqrt(ser + shift), {"shift": shift}))
-      candidates.append(("cbrt", np.cbrt(ser), {"shift": 0.0}))
-      candidates.append(("fourth_root", np.power(ser + shift, 0.25), {"shift": shift}))
-      candidates.append(("log", np.log1p(ser + shift), {"shift": shift}))
+    if skew_orig > 0:
+      # Positive skew: sqrt, cbrt, ln (where applicable)
+      if (x_valid >= 0).all():
+        sqrt_vals = np.sqrt(x_valid)
+        if np.isfinite(sqrt_vals).all():
+          s = x.copy()
+          s.loc[x_valid.index] = sqrt_vals
+          candidates["sqrt"] = s
+      cbrt_vals = np.cbrt(x_valid)
+      if np.isfinite(cbrt_vals).all():
+        s = x.copy()
+        s.loc[x_valid.index] = cbrt_vals
+        candidates["cbrt"] = s
+      if (x_valid > 0).all():
+        ln_vals = np.log(x_valid)
+        if np.isfinite(ln_vals).all():
+          s = x.copy()
+          s.loc[x_valid.index] = ln_vals
+          candidates["ln"] = s
     else:
-      candidates.append(("square", np.power(ser, 2), {"shift": 0.0}))
-      candidates.append(("cube", np.power(ser, 3), {"shift": 0.0}))
+      # Negative skew: square, cube, exponent (x**4)
+      sq_vals = np.square(x_valid)
+      if np.isfinite(sq_vals).all():
+        s = x.copy()
+        s.loc[x_valid.index] = sq_vals
+        candidates["square"] = s
+      cube_vals = np.power(x_valid, 3)
+      if np.isfinite(cube_vals).all():
+        s = x.copy()
+        s.loc[x_valid.index] = cube_vals
+        candidates["cube"] = s
+      exp_vals = np.power(x_valid, 4)
+      if np.isfinite(exp_vals).all():
+        s = x.copy()
+        s.loc[x_valid.index] = exp_vals
+        candidates["exponent"] = s
 
-    if stats is not None:
-      try:
-        yj, lam = stats.yeojohnson(ser.dropna())
-        yj_ser = pd.Series(yj, index=ser.dropna().index)
-        yj_full = ser.copy()
-        yj_full.loc[yj_ser.index] = yj_ser
-        candidates.append(("yeojohnson", yj_full, {"shift": 0.0, "lambda": float(lam)}))
-      except Exception:
-        pass
+    if not candidates:
+      continue
 
     best_name = None
-    best_skew = None
+    best_skew = abs(skew_orig)
     best_series = None
-    best_meta = {"shift": 0.0, "lambda": None}
-
-    for name, transformed, meta in candidates:
-      if transformed.dropna().empty:
+    for name, ser in candidates.items():
+      sk = ser.skew()
+      if pd.isna(sk):
         continue
-      s = float(pd.Series(transformed).skew())
-      if best_skew is None or abs(s) < abs(best_skew):
-        best_skew = s
+      if abs(sk) < best_skew:
+        best_skew = abs(sk)
         best_name = name
-        best_series = transformed
-        best_meta = {"shift": float(meta.get("shift", 0.0)), "lambda": meta.get("lambda", None)}
+        best_series = ser
 
-    if best_name is not None and best_series is not None:
-      out[col] = best_series
-      report[col]["applied"] = best_name
-      report[col]["best_skew"] = float(best_skew)
-      report[col]["shift"] = best_meta.get("shift", 0.0)
-      report[col]["lambda"] = best_meta.get("lambda", None)
+    if best_series is None:
+      best_name = "none"
+      best_skew = abs(skew_orig)
+      best_series = x
 
-  return (out, report) if return_report else out
+    new_col = f"{col}_normalized"
+    out[new_col] = best_series
+    skew_new = best_series.skew()
+    report.append((col, skew_orig, best_name, skew_new))
+
+    # Record exact transformation for this column: lambda if yeojohnson, else transform name
+    if keep_originals:
+      target_col = new_col
+    else:
+      target_col = col
+    if best_name == "yeojohnson" and yj_lambda is not None:
+      transformations[target_col] = float(yj_lambda)
+    else:
+      transformations[target_col] = best_name
+
+    if not keep_originals:
+      out = out.drop(columns=[col])
+      out = out.rename(columns={new_col: col})
+
+  if verbose and report:
+    print("=== Normalize (skew-reduction) report ===")
+    for col, sk_orig, transform, sk_new in report:
+      if keep_originals:
+        target_col = f"{col}_normalized"
+      else:
+        target_col = col
+      exact = transformations.get(target_col, transform)
+      exact_str = f"lambda={float(exact):.4f}" if not isinstance(exact, str) else exact
+      print(f"  {col}: skew {sk_orig:.4f} -> {exact_str} -> skew {sk_new:.4f}  (saved as '{target_col}')")
+    print()
+
+  return pd.DataFrame(out), transformations
+
+
+def manage_outliers(df, epsilon=0.5, min_samples=5, columns=None, drop_outliers=False, verbose=True):
+  """
+  Identify outlier rows using DBSCAN (noise points are treated as outliers).
+  Optionally drop outlier rows or only report counts and which features drive outlier status.
+
+  Parameters
+  ----------
+  df : pandas.DataFrame
+      Input dataframe.
+  epsilon : float, default 0.5
+      DBSCAN maximum distance between two samples for one to be in the neighborhood of the other.
+      Numeric features are standardized before clustering, so epsilon is in scaled units.
+  min_samples : int, default 5
+      DBSCAN minimum number of samples in a neighborhood for a core point.
+  columns : list of str or None, optional
+      Numeric columns to use for clustering. If None, all numeric columns are used.
+  drop_outliers : bool, default False
+      If True, remove rows that DBSCAN labels as noise (outliers). If False, return the
+      full dataframe and only report outlier information when verbose=True.
+  verbose : bool, default True
+      If True, print the number of outliers and, for each outlier row, which features
+      contribute most to its distance from the nearest cluster (helps explain why it was flagged).
+
+  Returns
+  -------
+  pandas.DataFrame
+      If drop_outliers=True, dataframe with outlier rows removed. Otherwise, the original
+      dataframe unchanged.
+  """
+  import pandas as pd
+  import numpy as np
+  from sklearn.cluster import DBSCAN
+  from sklearn.preprocessing import StandardScaler
+
+  out = df.copy()
+  numeric_cols = [c for c in out.columns if pd.api.types.is_numeric_dtype(out[c])]
+  if columns is not None and len(columns) > 0:
+    numeric_cols = [c for c in columns if c in numeric_cols]
+  if not numeric_cols:
+    if verbose:
+      print("manage_outliers: no numeric columns to cluster.")
+    return pd.DataFrame(out)
+
+  # Use only rows with no missing values in the clustering columns
+  X = out[numeric_cols].dropna(how="any")
+  if len(X) < 2:
+    if verbose:
+      print("manage_outliers: not enough rows with complete numeric data.")
+    return pd.DataFrame(out)
+
+  scaler = StandardScaler()
+  X_scaled = scaler.fit_transform(X)
+  clusterer = DBSCAN(eps=epsilon, min_samples=min_samples)
+  labels = clusterer.fit_predict(X_scaled)
+
+  outlier_mask = labels == -1
+  n_outliers = int(outlier_mask.sum())
+  outlier_indices = X.index[outlier_mask].tolist()
+
+  if verbose:
+    print("=== Outlier report (DBSCAN) ===")
+    print(f"  Epsilon: {epsilon}, min_samples: {min_samples}")
+    print(f"  Rows used for clustering: {len(X)} (rows with missing values in clustering columns excluded)")
+    print(f"  Number of outlier rows (noise): {n_outliers}")
+    if n_outliers > 0:
+      # Feature contribution: for each outlier, distance to nearest cluster centroid by feature
+      core_mask = labels >= 0
+      if core_mask.any():
+        unique_labels = np.unique(labels[core_mask])
+        centroids = np.array([X_scaled[labels == k].mean(axis=0) for k in unique_labels])
+        for idx in outlier_indices[:20]:  # cap at 20 to avoid huge output
+          row = X_scaled[X.index == idx][0]
+          dists = np.linalg.norm(centroids - row, axis=1)
+          nearest_idx = np.argmin(dists)
+          diff = np.abs(row - centroids[nearest_idx])
+          order = np.argsort(diff)[::-1]
+          top = [f"{numeric_cols[j]} ({diff[j]:.2f})" for j in order[:5]]
+          print(f"  Outlier row {idx}: top contributing features (scaled) — {', '.join(top)}")
+        if n_outliers > 20:
+          print(f"  ... and {n_outliers - 20} more outlier rows.")
+      else:
+        print("  (No core points; cannot compute feature contributions.)")
+    print()
+
+  if drop_outliers and n_outliers > 0:
+    out = out.drop(index=outlier_indices)
+
+  return pd.DataFrame(out)
