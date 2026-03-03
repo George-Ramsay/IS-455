@@ -593,3 +593,81 @@ def manage_outliers(df, epsilon=0.5, min_samples=5, columns=None, drop_outliers=
     out = out.drop(index=outlier_indices)
 
   return pd.DataFrame(out)
+
+# Create a routine that calculates VIF for each independent variable that isn't the constant term
+# or is a dummy variable. Create a loop that removes the variable with the highest VIF until all
+# variables have a VIF less than 5.
+def manage_vif(df, columns=None, vif_threshold=5, verbose=True):
+  """
+  Calculate Variance Inflation Factor (VIF) for numeric features and iteratively
+  remove features with VIF > threshold until all remaining features are below threshold.
+  
+  Parameters
+  ----------
+  df : pandas.DataFrame
+    Input dataframe.
+  columns : list of str or None, optional
+    Numeric columns to include in VIF calculation. If None, all numeric columns are used.
+  vif_threshold : float, default 5
+    Maximum acceptable VIF. Features with higher VIF are removed iteratively.
+  verbose : bool, default True
+    If True, print VIF report at each iteration.
+  
+  Returns
+  -------
+  tuple of (pandas.DataFrame, pandas.DataFrame)
+    - First element: DataFrame with only the columns that passed VIF screening.
+    - Second element: Final VIF report (variables and their VIF values).
+  """
+  import pandas as pd
+  from statsmodels.stats.outliers_influence import variance_inflation_factor
+  
+  out = df.copy()
+  numeric_cols = [c for c in out.columns if pd.api.types.is_numeric_dtype(out[c])]
+  
+  if columns is not None and len(columns) > 0:
+    cols_to_use = [c for c in columns if c in numeric_cols]
+  else:
+    cols_to_use = list(numeric_cols)
+  
+  if not cols_to_use:
+    if verbose:
+      print("manage_vif: no numeric columns found.")
+    return pd.DataFrame(out), pd.DataFrame()
+  
+  X = out[cols_to_use].dropna()
+  if len(X) == 0:
+    if verbose:
+      print("manage_vif: no complete cases for VIF calculation.")
+    return pd.DataFrame(out), pd.DataFrame()
+  
+  iteration = 0
+  while True:
+    vif_data = pd.DataFrame()
+    vif_data["variables"] = X.columns
+    vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+    vif_data = vif_data.sort_values("VIF", ascending=False)
+    
+    if verbose:
+      print(f"=== VIF Report (Iteration {iteration}) ===")
+      print(vif_data.to_string(index=False))
+      print()
+    
+    max_vif = vif_data["VIF"].max()
+    if max_vif <= vif_threshold or len(X.columns) <= 1:
+      break
+    
+    col_to_drop = vif_data.loc[vif_data["VIF"].idxmax(), "variables"]
+    if verbose:
+      print(f"Dropping '{col_to_drop}' (VIF={vif_data['VIF'].max():.2f})\n")
+    X = X.drop(columns=[col_to_drop])
+    iteration += 1
+  
+  if verbose:
+    print(f"=== Final VIF Report ===")
+    print(vif_data.to_string(index=False))
+    print()
+  
+  # Return only the columns that passed VIF screening
+  out = out[X.columns]
+  return pd.DataFrame(out), vif_data
