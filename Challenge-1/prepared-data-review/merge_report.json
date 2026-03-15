@@ -1,0 +1,59 @@
+{
+  "selected_sources": [
+    "kenpom_barttorvik",
+    "teamrankings",
+    "resumes"
+  ],
+  "team_feature_sources": [
+    {
+      "source_name": "kenpom_barttorvik",
+      "filename": "KenPom Barttorvik.csv",
+      "prefix": "kp",
+      "rows": 1147,
+      "columns_added": 95,
+      "coverage_pct": 100.0
+    },
+    {
+      "source_name": "teamrankings",
+      "filename": "TeamRankings.csv",
+      "prefix": "tr",
+      "rows": 1147,
+      "columns_added": 38,
+      "coverage_pct": 100.0
+    },
+    {
+      "source_name": "resumes",
+      "filename": "Resumes.csv",
+      "prefix": "res",
+      "rows": 1147,
+      "columns_added": 12,
+      "coverage_pct": 100.0
+    }
+  ],
+  "location_merge": {
+    "matchup_rows": 2140,
+    "location_rows_matched_pct": 99.67,
+    "location_rows_missing": 7
+  },
+  "team_features_shape": [
+    1087,
+    150
+  ],
+  "matchup_rows_shape": [
+    2140,
+    181
+  ],
+  "modeling_table_shape": [
+    2140,
+    399
+  ],
+  "target_column": "win",
+  "blocked_feature_columns": [
+    "round",
+    "current_round",
+    "score",
+    "opp_round",
+    "opp_current_round",
+    "opp_score"
+  ]
+}

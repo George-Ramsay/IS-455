@@ -282,13 +282,3 @@ At the end of each iteration, record:
 - exact next change to try
 
 This keeps the next notebook focused instead of exploratory in every direction.
-
-## Immediate Next Step
-
-Build `iter_1.ipynb` as the baseline notebook:
-
-- load the challenge files
-- derive the target
-- perform the first leakage audit
-- establish the fixed split strategy
-- benchmark a dummy model, logistic regression, and a shallow decision tree
