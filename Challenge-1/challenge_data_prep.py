@@ -13,6 +13,7 @@ import pandas as pd
 CHALLENGE_DIR = Path(__file__).resolve().parent
 DEFAULT_KAGGLE_DATA_DIR = CHALLENGE_DIR / "data-Kaggle"
 DEFAULT_BARTTORVIK_DATA_DIR = CHALLENGE_DIR / "data-BartTorvik"
+DEFAULT_TEAMRANKINGS_DATA_DIR = CHALLENGE_DIR / "data-TeamRankings"
 DEFAULT_OUTPUT_DIR = CHALLENGE_DIR / "prepared-data"
 
 TEAM_KEYS = ["year", "team_no"]
@@ -71,6 +72,14 @@ SOURCE_SPECS = {
         prefix="tr",
         default=True,
         extra_drop_columns=("round", "seed", "team"),
+    ),
+    "teamrankings_schedule_strength": SourceSpec(
+        name="teamrankings_schedule_strength",
+        filename="*_schedule_strength_by_other.csv",
+        prefix="trsos",
+        default=True,
+        extra_drop_columns=("snapshot_date", "source_url", "record", "team", "team_key"),
+        data_group="teamrankings_scraped",
     ),
     "resumes": SourceSpec(
         name="resumes",
@@ -597,9 +606,45 @@ def load_barttorvik_player_aggregates(barttorvik_data_dir: Path, team_base: pd.D
     return aggregated
 
 
+def load_teamrankings_schedule_strength(teamrankings_data_dir: Path, team_base: pd.DataFrame) -> pd.DataFrame:
+    season_frames: list[pd.DataFrame] = []
+    for path in sorted(teamrankings_data_dir.glob("*_schedule_strength_by_other.csv")):
+        season_frame = read_csv_normalized(path)
+        ensure_columns(season_frame, ["season_year", "team"], path.name)
+        season_frame = season_frame.rename(columns={"season_year": "year"})
+        season_frames.append(season_frame)
+
+    if not season_frames:
+        raise FileNotFoundError(f"No TeamRankings schedule strength files found in {teamrankings_data_dir}")
+
+    source = pd.concat(season_frames, ignore_index=True)
+    source["year"] = pd.to_numeric(source["year"], errors="coerce").astype("Int64")
+    source = source.dropna(subset=["year", "team"]).copy()
+    source["year"] = source["year"].astype(int)
+    source["team_key"] = source["team"].map(normalize_team_key)
+
+    if "snapshot_date" in source.columns:
+        source["snapshot_date"] = pd.to_datetime(source["snapshot_date"], format="%m/%d/%Y", errors="coerce")
+        source = source.sort_values(["year", "team_key", "snapshot_date"]).drop_duplicates(
+            ["year", "team_key"], keep="last"
+        )
+    else:
+        source = source.drop_duplicates(["year", "team_key"], keep="last")
+
+    source = source.merge(
+        team_base[["year", "team_no", "team_key"]],
+        on=["year", "team_key"],
+        how="inner",
+        validate="m:1",
+    )
+    validate_unique_keys(source, TEAM_KEYS, "TeamRankings scraped schedule strength")
+    return source
+
+
 def prepare_team_source(
     kaggle_data_dir: Path,
     barttorvik_data_dir: Path,
+    teamrankings_data_dir: Path,
     spec: SourceSpec,
     team_base: pd.DataFrame,
 ) -> pd.DataFrame:
@@ -609,6 +654,9 @@ def prepare_team_source(
     elif spec.data_group == "barttorvik" and spec.name == "barttorvik_player_aggregates":
         source = load_barttorvik_player_aggregates(barttorvik_data_dir, team_base)
         source_name = "BartTorvik yearly player aggregates"
+    elif spec.data_group == "teamrankings_scraped" and spec.name == "teamrankings_schedule_strength":
+        source = load_teamrankings_schedule_strength(teamrankings_data_dir, team_base)
+        source_name = "TeamRankings scraped schedule strength"
     else:
         source_dir = kaggle_data_dir if spec.data_group == "kaggle" else barttorvik_data_dir
         source = read_csv_normalized(source_dir / spec.filename)
@@ -625,6 +673,7 @@ def prepare_team_source(
 def build_team_feature_table(
     kaggle_data_dir: Path,
     barttorvik_data_dir: Path,
+    teamrankings_data_dir: Path,
     selected_sources: list[str] | None = None,
     include_optional_sources: bool = False,
 ) -> tuple[pd.DataFrame, list[dict]]:
@@ -635,7 +684,7 @@ def build_team_feature_table(
 
     for source_name in resolve_source_names(selected_sources, include_optional_sources):
         spec = SOURCE_SPECS[source_name]
-        prepared = prepare_team_source(kaggle_data_dir, barttorvik_data_dir, spec, team_features)
+        prepared = prepare_team_source(kaggle_data_dir, barttorvik_data_dir, teamrankings_data_dir, spec, team_features)
         matched = base_keys.merge(prepared[TEAM_KEYS], on=TEAM_KEYS, how="left", indicator=True)
         coverage = float((matched["_merge"] == "both").mean())
 
@@ -655,7 +704,13 @@ def build_team_feature_table(
         conference_keys = team_features[TEAM_KEYS + ["kp_conf_id"]].rename(columns={"kp_conf_id": "conf_id"})
         for source_name in resolve_conference_source_names(include_optional_sources):
             spec = CONFERENCE_SOURCE_SPECS[source_name]
-            prepared = prepare_team_source(kaggle_data_dir, barttorvik_data_dir, spec, team_features)
+            prepared = prepare_team_source(
+                kaggle_data_dir,
+                barttorvik_data_dir,
+                teamrankings_data_dir,
+                spec,
+                team_features,
+            )
             matched = conference_keys.merge(prepared[list(spec.join_keys)], on=list(spec.join_keys), how="left", indicator=True)
             coverage = float((matched["_merge"] == "both").mean())
 
@@ -1001,6 +1056,7 @@ def drop_leakage_columns(modeling_table: pd.DataFrame) -> pd.DataFrame:
 def build_modeling_table(
     kaggle_data_dir: Path = DEFAULT_KAGGLE_DATA_DIR,
     barttorvik_data_dir: Path = DEFAULT_BARTTORVIK_DATA_DIR,
+    teamrankings_data_dir: Path = DEFAULT_TEAMRANKINGS_DATA_DIR,
     selected_sources: list[str] | None = None,
     include_optional_sources: bool = False,
     include_auto_diffs: bool = False,
@@ -1012,6 +1068,7 @@ def build_modeling_table(
     team_features, source_report = build_team_feature_table(
         kaggle_data_dir=kaggle_data_dir,
         barttorvik_data_dir=barttorvik_data_dir,
+        teamrankings_data_dir=teamrankings_data_dir,
         selected_sources=selected_sources,
         include_optional_sources=include_optional_sources,
     )
@@ -1086,6 +1143,12 @@ def main() -> None:
         default=DEFAULT_BARTTORVIK_DATA_DIR,
         help="Directory containing the supplemental BartTorvik CSV files.",
     )
+    parser.add_argument(
+        "--teamrankings-data-dir",
+        type=Path,
+        default=DEFAULT_TEAMRANKINGS_DATA_DIR,
+        help="Directory containing scraped TeamRankings schedule-strength CSV files.",
+    )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Directory for prepared outputs.")
     parser.add_argument(
         "--sources",
@@ -1108,6 +1171,7 @@ def main() -> None:
     bundle = build_modeling_table(
         kaggle_data_dir=args.data_dir,
         barttorvik_data_dir=args.barttorvik_data_dir,
+        teamrankings_data_dir=args.teamrankings_data_dir,
         selected_sources=args.sources,
         include_optional_sources=args.include_optional_sources,
         include_auto_diffs=args.include_auto_diffs,
