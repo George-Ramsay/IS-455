@@ -17,6 +17,7 @@ import challenge_data_prep as prep
 CHALLENGE_DIR = Path(__file__).resolve().parent
 DEFAULT_DATA_DIR = CHALLENGE_DIR / "data-Kaggle"
 DEFAULT_BARTTORVIK_DATA_DIR = CHALLENGE_DIR / "data-BartTorvik"
+DEFAULT_TEAMRANKINGS_DATA_DIR = CHALLENGE_DIR / "data-TeamRankings"
 RANDOM_STATE = 27
 
 # Locked from iter_2.ipynb after backward elimination and validation.
@@ -122,10 +123,16 @@ def build_prediction_row(team_features: pd.DataFrame, year: int, team_name: str,
     return prediction_row
 
 
-def train_model(kaggle_data_dir: Path, barttorvik_data_dir: Path, prediction_year: int) -> tuple[Pipeline, pd.DataFrame]:
+def train_model(
+    kaggle_data_dir: Path,
+    barttorvik_data_dir: Path,
+    teamrankings_data_dir: Path,
+    prediction_year: int,
+) -> tuple[Pipeline, pd.DataFrame]:
     bundle = prep.build_modeling_table(
         kaggle_data_dir=kaggle_data_dir,
         barttorvik_data_dir=barttorvik_data_dir,
+        teamrankings_data_dir=teamrankings_data_dir,
         include_auto_diffs=True,
     )
     modeling_table = bundle.modeling_table.copy()
@@ -142,10 +149,11 @@ def train_model(kaggle_data_dir: Path, barttorvik_data_dir: Path, prediction_yea
     return model, bundle.team_features.copy()
 
 
-def list_teams(kaggle_data_dir: Path, barttorvik_data_dir: Path, year: int) -> None:
+def list_teams(kaggle_data_dir: Path, barttorvik_data_dir: Path, teamrankings_data_dir: Path, year: int) -> None:
     team_features, _ = prep.build_team_feature_table(
         kaggle_data_dir=kaggle_data_dir,
         barttorvik_data_dir=barttorvik_data_dir,
+        teamrankings_data_dir=teamrankings_data_dir,
     )
     season_teams = (
         team_features.loc[team_features["year"] == year, "team"]
@@ -173,6 +181,12 @@ def main() -> None:
         default=DEFAULT_BARTTORVIK_DATA_DIR,
         help="Directory containing BartTorvik season files.",
     )
+    parser.add_argument(
+        "--teamrankings-data-dir",
+        type=Path,
+        default=DEFAULT_TEAMRANKINGS_DATA_DIR,
+        help="Directory containing TeamRankings season files.",
+    )
     parser.add_argument("--list-teams", action="store_true", help="List available teams for the selected year.")
     args = parser.parse_args()
 
@@ -183,6 +197,7 @@ def main() -> None:
         list_teams(
             kaggle_data_dir=args.data_dir,
             barttorvik_data_dir=args.barttorvik_data_dir,
+            teamrankings_data_dir=args.teamrankings_data_dir,
             year=args.year,
         )
         return
@@ -193,6 +208,7 @@ def main() -> None:
     model, team_features = train_model(
         kaggle_data_dir=args.data_dir,
         barttorvik_data_dir=args.barttorvik_data_dir,
+        teamrankings_data_dir=args.teamrankings_data_dir,
         prediction_year=args.year,
     )
     matchup_row = build_prediction_row(
